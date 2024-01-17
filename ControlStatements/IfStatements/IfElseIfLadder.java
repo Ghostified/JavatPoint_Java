@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.IfStatements;
 /*
  * contains multiple if statements
  * the program enters a block of code if the condition is true

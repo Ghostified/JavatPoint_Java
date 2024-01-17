@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.IfStatements;
 /*
  * in nested if, statements can contain a if or if-else statement inside another if or if else 
  * 
