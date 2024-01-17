@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.IfStatements;
 //Most Basic of control flow
 //evaluates a boolean expression
 //Enables the the program to enter a block of code and if the expression evaluates true

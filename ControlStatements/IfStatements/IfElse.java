@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.IfStatements;
 /*
  * is an extension of the if statement
  * the else block is executed if the condition of the if statement returns false
