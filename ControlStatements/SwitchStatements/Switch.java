@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.SwitchStatements;
 /*
  * Switch statements contain cases which are swiched based on the varibale being executed 
  * 
