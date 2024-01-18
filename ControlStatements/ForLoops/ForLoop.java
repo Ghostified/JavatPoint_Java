@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.ForLoops;
 /*
  * used to execute a set of instructions repeatedly
  * A for loop initializes a variable, check the condition and ,increment or decrement
