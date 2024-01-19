@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.BreakStatement;
 /*
  * Break is a jumpstatement
  * Used to break the current flow and transfer control to a statement outside the loop or switch statement
