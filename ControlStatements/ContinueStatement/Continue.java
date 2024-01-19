@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.ContinueStatement;
 /*
  * Continue statement does  not break a loop
  * It skips a specific part of the loop and jumps to the next iteration of the loop
