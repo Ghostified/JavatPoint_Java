@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.ForLoops;
 /*
  * Used to traverese data structures  like arrays
  *  
