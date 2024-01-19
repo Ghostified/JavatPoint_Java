@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.BreakStatement;
 /*
  * Break statement with  a ;labeled for loop
  */
