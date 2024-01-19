@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.WhileLoops;
 /*
  * Do while loop checks the statement at the end of the loop after executing the loop
  */

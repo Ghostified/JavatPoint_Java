@@ -1,4 +1,4 @@
-package ControlStatements;
+package ControlStatements.WhileLoops;
 /*
  * While loops are entry controlled as the condition is alwayts checkjed at the entrance of the loop
  * If condition is true then the loop is  executed 
