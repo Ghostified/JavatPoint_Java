@@ -1,4 +1,4 @@
-package Classes;
+package Objects;
 
 //Java Program to illustrate how to define a class and fields  
 //Defining a Student class.  
