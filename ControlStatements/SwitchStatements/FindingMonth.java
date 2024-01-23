@@ -40,6 +40,7 @@ public class FindingMonth {
             case 12: System.out.println("December");
             break;
             default:System.out.println("Not in range");
-        }
+        } scanner.close();
     }
+   
 }
