@@ -5,8 +5,8 @@ package ThisKeyword;
  */
 
  //example
- class s2 {
-    void m (s2 obj){
+ class S2 {
+    void m (S2 obj){
         System.out.println("Method is invoked");
     }
 
@@ -17,7 +17,8 @@ package ThisKeyword;
 public class ThisEventHandling {
 
     public static void main (String[] Args) {
-        S2
-    }
+        S2 s1 = new S2();
+        s1. p();
+       }
 
 }
