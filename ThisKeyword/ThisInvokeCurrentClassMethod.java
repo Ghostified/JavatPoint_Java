@@ -20,6 +20,6 @@ public class ThisInvokeCurrentClassMethod {
 
     public static void main (String[]Args) {
         A a = new A();
-        a.n();
+        a.n();\
     }
 }
