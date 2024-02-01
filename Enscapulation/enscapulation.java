@@ -1,0 +1,1 @@
+//Enscapulation is the process of wrapping code and data in a single unit
