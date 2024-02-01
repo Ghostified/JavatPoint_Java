@@ -61,10 +61,16 @@ public class WrapperClassesExample {
         boolean boolvalue = boolobj;
 
         //printing primitives
+        System.out.println();
         System.out.println("---Printing primitive Values");
         System.out.println("Byte Value: " + byteValue );
-        System.out.println("Byte Value: " + byteValue );
-
+        System.out.println("short Value: " + shortValue );
+        System.out.println("int Value: " + intValue );
+        System.out.println(" long Value: " + longValue  );
+        System.out.println(" float Value: " + floatvalue );
+        System.out.println("double Value: " + doublevalue );
+        System.out.println("char Value: " +  charvalue);
+        System.out.println(" boolean Value: " + boolvalue );
         
     }
 
