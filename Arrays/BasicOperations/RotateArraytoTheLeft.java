@@ -22,7 +22,7 @@ public class RotateArraytoTheLeft {
         for (j = 0; j < array.length-1; j++) {
 
             //shift array elements one by one
-            array[j] = array[j + 1];
+            array[j] = array[j +  1];
         }
 
         //first element will be added at the end
