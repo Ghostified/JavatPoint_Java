@@ -5,7 +5,7 @@ public class Pattern5 {
     public static void main(String[] args) {
         int i, j, rows; 
         Scanner input = new Scanner(System.in);
-        System.out.println(" Enter the number of rows to print: ");
+        System.out.print(" Enter the number of rows to print: ");
         rows = input.nextInt();
         for (i = 1; i <= rows ; i++)
         {
