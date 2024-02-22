@@ -12,7 +12,7 @@ public class RightAngleAlphabeticPattern {
         for (int j  = 0; j <= i; j++)
         {
             //adds the value of j inthe ASCII Value of A and prints out corresponding alphabet
-            System.out.println((char) (alphabet + j) + " ");
+            System.out.print((char) (alphabet + j) + " ");
         }
 
         System.out.println();
