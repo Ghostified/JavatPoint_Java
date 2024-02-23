@@ -19,31 +19,28 @@ class Fiction extends Liblary {
 }
 
 class Biography extends Liblary {
-    public void read () {
-        System.out.println("Reading a biography book");
-    }
+    // public void read () {
+    //     System.out.println("Reading a biography book");
+    // }
 }
 public class Example3 {
 
     public static void main (String [] Args) {
 
         Liblary uon = new Liblary();
-        Liblary jkuat = new Fiction ();
-        Biography elonMusk = new Biography();
-        Liblary section = new Biography();
-        Fiction harryPotter = new Fiction();
+        Liblary harryPotter = new Fiction();
+        Liblary biography = new Biography();
 
-
-        uon.read();
-        jkuat.read();
         harryPotter.read();
         harryPotter.borrow();
-        elonMusk.read();
-        elonMusk.borrow();
-        elonMusk.returns();
-        section.borrow();
-        section.read();
-        section.returns();
+        harryPotter.returns();
+
+        biography.read();
+        biography.borrow();
+        biography.returns();
+
+
+        
 
     }
 
