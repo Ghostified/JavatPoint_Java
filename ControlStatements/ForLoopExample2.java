@@ -15,7 +15,7 @@ public class ForLoopExample2 {
 
     public static void main(String[] args) {
         
-        for (int x = 10; x < 20; x = x + 1) {
+        for (int x = 10 ; x >= 0; x = x - 1) {
             System.out.print("Value of x is: "+x);
             System.out.print("\n");
         }
