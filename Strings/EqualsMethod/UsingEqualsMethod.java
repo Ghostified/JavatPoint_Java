@@ -1,4 +1,4 @@
-package Strings.Compare;
+package Strings.EqualsMethod;
 /*
  * we can compare on the basis of content and reference
  * the compare () method compares the original content of the string

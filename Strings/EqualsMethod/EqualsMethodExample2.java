@@ -1,4 +1,4 @@
-package Strings.Compare;
+package Strings.EqualsMethod;
 
 public class EqualsMethodExample2 {
 
