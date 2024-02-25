@@ -1,4 +1,4 @@
-package Strings.Compare;
+package Strings.EqualsMethod;
 /*
  * Testing the equality of a strings present in a list
  */
