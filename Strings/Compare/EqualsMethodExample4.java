@@ -20,21 +20,21 @@ public class EqualsMethodExample4 {
         System.out.println(str.equals(c));
 
         //reference of the integer character
-        System.out.println(str.equals(i));
+        System.out.println(s1.equals(i));
 
         //reference to the float object
-        System.out.println(str.equals(f));
+        System.out.println(s2.equals(f));
 
         //reference to the boolean object
-        System.out.println(str.equals(b));
+        System.out.println(s3.equals(b));
 
         //the above return false because we are compating strings to diffrent data types
         //to compare we have convert the diffrent data types into stringd using the toString () method
 
         System.out.println(str.equals(c.toString()));
-        System.out.println(str.equals(i.toString()));
-        System.out.println(str.equals(f.toString()));
-        System.out.println(str.equals(b.toString()));
+        System.out.println(s1.equals(i.toString()));
+        System.out.println(s2.equals(f.toString()));
+        System.out.println(s3.equals(b.toString()));
 
     }
 }
