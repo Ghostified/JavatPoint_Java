@@ -44,7 +44,7 @@ public class Example3 {
             System.out.println("After converted into UTF-16LE the String is: ");
 
             for (int j = 0; j < byteObject3.length; j++) {
-                System.out.println(byteObject3[j] + " ");
+                System.out.print(byteObject3[j] + " ");
             }
         }
         catch (UnsupportedEncodingException e) {
