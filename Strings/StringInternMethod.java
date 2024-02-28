@@ -22,6 +22,9 @@ public class StringInternMethod {
     public static void main(String[] args) {
         ExampleOne object = new ExampleOne();
         object.internMethod1();
+
+        StringConstantPool object2 = new StringConstantPool();
+        object2.stringConstantPool();
         
     }
 }
@@ -31,6 +34,25 @@ class ExampleOne{
         StringInternMethod instance = new StringInternMethod();
         String stringNameOne = instance.getStringOne();
         String stringNameTwo= instance.getStringTwo();
-        System.out.println(stringNameOne == stringNameTwo); //returns false
+
+        //returns false because separate memory is allocated for each string literal
+        System.out.println(stringNameOne == stringNameTwo); 
+
+    }
+}
+
+class StringConstantPool {
+    public static void stringConstantPool () {
+        StringInternMethod instance = new StringInternMethod();
+        String stringNameOne = instance.getStringOne();
+        String stringNameTwo = instance.getStringTwo();
+
+        //invoking the intern method
+        stringNameOne = stringNameOne.intern();
+        stringNameTwo = stringNameTwo.intern();
+
+        //Prints true as the String intern() method craetses an object in the String Constant Pool
+        //If the string is in existance, the string literal is returned from the pool rather than allocating memory to similar strings
+        System.out.println(stringNameOne == stringNameTwo);
     }
 }
