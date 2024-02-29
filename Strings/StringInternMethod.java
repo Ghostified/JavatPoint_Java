@@ -32,14 +32,17 @@ public class StringInternMethod {
 
     //Main Method
     public static void main(String[] args) {
-      //  ExampleOne object = new ExampleOne();
-      //  object.internMethod1();
+        ExampleOne object = new ExampleOne();
+        object.internMethod1();
 
-       // StringConstantPool object2 = new StringConstantPool();
-       // object2.stringConstantPool();
+        StringConstantPool object2 = new StringConstantPool();
+        object2.stringConstantPool();
 
         Example2 object3 = new Example2();
         object3.example1();
+
+        Remember object4 = new Remember();
+        object4.remember();
     }
 }
 //This class proves that new strings in Java allocates memory separately for each string literal
@@ -87,4 +90,15 @@ class Example2 {
         System.out.println(stringNameFour == s4); //false
     
     }
+}
+
+//pointe to remember
+// A string literal always invokes the intern () method , wether one mentions the intern method or not
+class Remember {
+    public static void remember () {
+        String s = "d".intern();
+        String p = "d"; //compiler treats it as String p = "d ".intern();
+        System.out.println(s==p); //prints true
+    }
+    
 }
