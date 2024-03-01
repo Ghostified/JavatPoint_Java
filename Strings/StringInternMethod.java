@@ -9,6 +9,7 @@ public class StringInternMethod {
     public static final String stringTwo = new String ("Welcome to Hogwarts");
     public static final String stringThree = "Hogwarts is fun";
     public static final String stringFour = new String ("Hogwarts is fun");
+    
 
     //Getter Methoid for stringOne
     public String getStringOne () {
@@ -29,6 +30,8 @@ public class StringInternMethod {
     public String getStringFour () {
         return stringFour;
     }
+
+   
 
     //Main Method
     public static void main(String[] args) {
@@ -102,3 +105,4 @@ class Remember {
     }
     
 }
+

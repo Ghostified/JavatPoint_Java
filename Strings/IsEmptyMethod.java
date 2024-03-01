@@ -7,6 +7,7 @@ public class IsEmptyMethod {
     //seting the final variables
     public static final String stringOne= "";
     public static final String stringTwo = "Welcome to Hogwarts";
+    public static final String stringFive = null;
 
     //Getter method for stringOne
     public String getStringOne (){
@@ -18,12 +19,20 @@ public class IsEmptyMethod {
         return stringTwo;
     }
 
+     //getter method for stringFive
+     public String getStringFive() {
+        return stringFive;
+    }
+
     public static void main(String[] args) {
         Example object = new Example();
         object.example1();
 
         Example10 object2 = new Example10();
         object2.example2();
+
+        NullExample object3 = new NullExample();
+        object3.nullString();
     }
 
 }
@@ -53,3 +62,22 @@ class Example10 {
         else System.out.println(stringTwo);
     }
 }
+
+//the isEmpty() method is noyt suitable for checking null strings
+//This returns a null pointrer exception 
+class NullExample {
+    public static void nullString () {
+        IsEmptyMethod instance = new IsEmptyMethod();
+        String stringFive = instance.getStringFive();
+
+        if (stringFive.isEmpty()) 
+        {
+            System.out.println("The string is null");
+        }
+        else 
+        {
+            System.out.println("The string is not null");
+        }
+    }
+}
+
