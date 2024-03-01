@@ -33,6 +33,9 @@ public class IsEmptyMethod {
 
         NullExample object3 = new NullExample();
         object3.nullString();
+
+        CheckNullString object4 = new CheckNullString();
+        object4.checkNull();
     }
 
 }
@@ -81,3 +84,20 @@ class NullExample {
     }
 }
 
+//to check a null string, we use the == operator to check for the null strings
+
+class CheckNullString {
+    public static void checkNull() {
+        IsEmptyMethod instance = new IsEmptyMethod();
+        String stringFive = instance.getStringFive();
+
+        if (stringFive == null) 
+        {
+            System.out.println("The string is null");
+        }
+        else 
+        {
+            System.out.println("The string is not null");
+        }
+    }
+}
