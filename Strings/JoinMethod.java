@@ -10,6 +10,9 @@ public class JoinMethod {
 
         Example13 object2 = new Example13();
         object2.joinExample2();
+
+        Example14 object3 = new Example14();
+        object3.nullDelimiter();
     }
 
 }
@@ -26,5 +29,14 @@ class Example13 {
         String time = String.join(":", "14", "00" , "Hrs");
         System.out.println(" " + time);
 
+    }
+}
+
+//in case of a null delimitter, a null pointer exception is thrown
+class Example14 {
+    public static void nullDelimiter () {
+        String string = "null";
+        string = String.join(null, "abc", "def", "ghi");
+        System.out.println(string);
     }
 }
