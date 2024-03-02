@@ -8,6 +8,7 @@ public class IsEmptyMethod {
     public static final String stringOne= "";
     public static final String stringTwo = "Welcome to Hogwarts";
     public static final String stringFive = null;
+    public static final String stringBlank = "   ";
 
     //Getter method for stringOne
     public String getStringOne (){
@@ -24,6 +25,11 @@ public class IsEmptyMethod {
         return stringFive;
     }
 
+    //getter method for stringSix
+    public String getStringBlank() {
+        return  stringBlank;
+    }
+
     public static void main(String[] args) {
         Example object = new Example();
         object.example1();
@@ -36,6 +42,9 @@ public class IsEmptyMethod {
 
         CheckNullString object4 = new CheckNullString();
         object4.checkNull();
+
+        Blank object5 = new Blank();
+        object5.blankStrings();
     }
 
 }
@@ -99,5 +108,46 @@ class CheckNullString {
         {
             System.out.println("The string is not null");
         }
+    }
+}
+//Using the isEmpty() method to find blank strings. Blank strings only contain white spaces
+class Blank{
+    public static void blankStrings () {
+        IsEmptyMethod instance = new IsEmptyMethod();
+         String stringBlank = instance.getStringBlank();
+         int size = stringBlank.length();
+
+         //trim the whiote spaces and after that
+         //if the string results in the empty string
+         //then the string is blank ; otherwise , not.
+
+         if (size == 0) 
+         {
+            System.out.println("The string is empty\n");
+         }
+         else if (size > 0 && stringBlank.trim().isEmpty()) 
+         {
+            System.out.println("The string is blank. \n");
+         }
+         else 
+         {
+            System.out.println("The string is not blank. \n");
+         }
+
+         String stringOne = instance.getStringOne();
+         size = stringOne.length();
+         if (size == 0)
+         {
+            System.out.println("The string is empty \n");
+         }
+         if (size > 0 && stringOne.trim().isEmpty()) 
+         {
+            System.out.println("The string is blank \n");
+         }
+         else
+         {
+            System.out.println("The string is not blank \n");
+         }
+
     }
 }
