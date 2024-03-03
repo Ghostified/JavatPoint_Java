@@ -61,13 +61,18 @@ class Example18 {
         String stringOne = instance.getStringOne();
         int index = stringOne.lastIndexOf("of", 5);
         if ( index == -1){
-            System.out.println(false);
+            System.out.println(false); //// returns -1 as its not found
         } 
         else {
-            System.out.println();
+            System.out.println(index); //returns the index if found
         }
-        System.out.println(index); // returns -1 as its not found
+        //System.out.println(index); 
         index = stringOne.lastIndexOf("of",20);
-        System.out.println(index);
+        if (index == -1) {
+            System.out.println("index of the substring not found");
+        }
+        else {
+            System.out.println("Index of the substring from the specified index: "+ index);
+        }
     }
  }
