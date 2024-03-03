@@ -16,6 +16,9 @@ public class LastIndexOfMethod {
 
         Example17 object2 = new Example17();
         object2.substringLastIndex();
+
+        Example18 object3 = new Example18();
+        object3.lastIndexFrom();
     }
 }
 class Example16 {
@@ -33,6 +36,17 @@ class Example17 {
         LastIndexOfMethod instance = new LastIndexOfMethod();
         String stringOne = instance.getStringOne();
         int index = stringOne.lastIndexOf("index");
-        System.out.println(index);
+        System.out.println(index); //returns 8
+    }
+}
+//finding the last index from a string by specifying the from index
+//this implementation searches for the occurence of the specified character, couting backwards
+
+class Example18 {
+    public static void lastIndexFrom () {
+        LastIndexOfMethod instance = new LastIndexOfMethod();
+        String stringOne = instance.getStringOne();
+        int index = stringOne.lastIndexOf('h',7);
+        System.out.println("the index of the 'h' char from index 7 in the string is : " + index); //returns 1 if not found -1 ,its case sensitive
     }
 }
