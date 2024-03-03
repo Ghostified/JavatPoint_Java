@@ -24,6 +24,9 @@ public static void main(String[] args) {
     Example22 object3 = new Example22();
     object3.reverseLength();
 
+    Example23 object4 = new Example23();
+    object4.whiteSpaces();
+
     }
 }
  class Example20  {
@@ -65,5 +68,20 @@ public static void main(String[] args) {
             //printing inreverse order 
             System.out.print(stringTwo.charAt(stringTwo.length() -i -1));
         }
+    }
+ }
+
+ //using the length methosd to find only white spaces in the string
+ class Example23 {
+    public static void whiteSpaces () {
+        LengthMethod instance = new LengthMethod();
+        String stringTwo = instance.getStringTwo();
+        int sizeWithWhiteSpaces = stringTwo.length();
+
+        System.out.println("In the string: " + "'" + stringTwo + "'");
+        stringTwo=stringTwo.replace(" ", "");
+        int sizeWithoutWhiteSpaces = stringTwo.length();
+        int numberOfWhiteSpaces = sizeWithWhiteSpaces - sizeWithoutWhiteSpaces;
+        System.out.println("Total number of white spaces are: " + numberOfWhiteSpaces);
     }
  }
