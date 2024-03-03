@@ -18,8 +18,12 @@ public static void main(String[] args) {
     Example20 object = new Example20();
     object.length1();
 
-    Example21 object2 = new    Example21();
+    Example21 object2 = new   Example21();
     object2.emptyLength();
+
+    Example22 object3 = new Example22();
+    object3.reverseLength();
+
     }
 }
  class Example20  {
@@ -44,6 +48,22 @@ public static void main(String[] args) {
         stringTwo = "";
         if (stringTwo.length() == 0) {
             System.out.println("the string is empty now: " +stringTwo.length());
+        }
+    }
+ }
+
+ //the length method can be used to reverse a string 
+ class Example22 {
+    public static void reverseLength () {
+        LengthMethod instance = new LengthMethod();
+        String stringTwo = instance.getStringTwo();
+        int size = stringTwo.length();
+
+        System.out.println(" Reverse of the string: " + "'" + stringTwo + "'" + "is");
+
+        for (int i =0; i < size; i++) {
+            //printing inreverse order 
+            System.out.print(stringTwo.charAt(stringTwo.length() -i -1));
         }
     }
  }
