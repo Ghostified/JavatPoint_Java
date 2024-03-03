@@ -60,6 +60,12 @@ class Example18 {
         LastIndexOfMethod instance = new LastIndexOfMethod();
         String stringOne = instance.getStringOne();
         int index = stringOne.lastIndexOf("of", 5);
+        if ( index == -1){
+            System.out.println(false);
+        } 
+        else {
+            System.out.println();
+        }
         System.out.println(index); // returns -1 as its not found
         index = stringOne.lastIndexOf("of",20);
         System.out.println(index);
