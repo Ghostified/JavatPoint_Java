@@ -15,7 +15,7 @@ public class JoinMethod {
         Example14 object3 = new Example14();
         object3.nullDelimiter();
 
-        //This method trats null elemets as elements of the string
+        //This method treats null elemets as elements of the string
         Example15 object4 = new Example15();
         object4.delimiterWithNull();
     }
