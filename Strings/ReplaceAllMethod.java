@@ -26,8 +26,11 @@ public class ReplaceAllMethod {
         Example30  object2 = new Example30();
         object2.replaceWhiteSpace(); 
 
-        Example31 object3 = new Example31();
-        object3.patternException();
+        //Example31 object3 = new Example31();
+        //object3.patternException();
+
+        Example32 object4 = new Example32();
+        object4.insertSpaces();
     }
 }
 
@@ -61,9 +64,19 @@ class Example30{
         ReplaceAllMethod instance = new ReplaceAllMethod();
         String stringOne = instance.getStringOne();
 
-        String replaString = stringOne.replaceAll("\\s", "");
-        System.out.println(replaString);
+        String replaceString = stringOne.replaceAll("\\s", "");
+        System.out.println(replaceString);
 
+    }
+
+    public String stringWithoutSpaces () {
+        //call the replaceWhitespace() method to ensure the stringWithoutSpaces() is initialized
+        replaceWhiteSpace();
+
+        //return modified string
+        ReplaceAllMethod instance = new ReplaceAllMethod();
+        String stringOne = instance.getStringOne();
+        return stringOne.replaceAll("\\s", "");
     }
 }
 
@@ -84,5 +97,29 @@ class Example31 {
         //invokinhg the replaceAll () method 
         stringTwo = stringTwo.replaceAll(regex, "Girl");
         System.out.println(stringTwo); //throws a pattern syntax Exception
+    }
+}
+//using the replace method to insert spaces in  a string
+//attempting to call the output of class30
+
+class Example32 {
+    public static void insertSpaces () {
+        Example30 example30 = new Example30();
+        String stringwithoutSpaces = example30.stringWithoutSpaces();
+
+        //test for NullPointerException
+         if (stringwithoutSpaces != null) // a method does not return a value in java, rather it returns null
+          {
+            System.out.println("success");
+         }
+         else {
+            System.out.println(stringwithoutSpaces);
+         }
+
+         String regex = "";
+
+         //adding white spaces before and after every character on of the input string
+         stringwithoutSpaces = stringwithoutSpaces.replaceAll(regex, " ");
+         System.out.println(stringwithoutSpaces);
     }
 }
