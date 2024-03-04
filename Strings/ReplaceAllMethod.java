@@ -25,6 +25,9 @@ public class ReplaceAllMethod {
         
         Example30  object2 = new Example30();
         object2.replaceWhiteSpace(); 
+
+        Example31 object3 = new Example31();
+        object3.patternException();
     }
 }
 
@@ -61,5 +64,25 @@ class Example30{
         String replaString = stringOne.replaceAll("\\s", "");
         System.out.println(replaString);
 
+    }
+}
+
+//the replaceAll () method throws a patternSyntaxException when there is an improper regular expression
+
+class Example31 {
+    public static void patternException () {
+        ReplaceAllMethod instance = new ReplaceAllMethod();
+        String stringTwo = instance.getStringTwo();
+        System.out.println(stringTwo);
+
+        
+        String regex = "\\" ;//the regular expression is invalid
+
+        //valid regex expression 
+       // String regex = "boy"; 
+
+        //invokinhg the replaceAll () method 
+        stringTwo = stringTwo.replaceAll(regex, "Girl");
+        System.out.println(stringTwo); //throws a pattern syntax Exception
     }
 }
