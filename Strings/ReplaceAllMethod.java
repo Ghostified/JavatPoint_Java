@@ -31,6 +31,9 @@ public class ReplaceAllMethod {
 
         Example32 object4 = new Example32();
         object4.insertSpaces();
+
+        Example33 object5 = new Example33();
+        object5.nullRegex();
     }
 }
 
@@ -100,10 +103,11 @@ class Example31 {
     }
 }
 //using the replace method to insert spaces in  a string
-//attempting to call the output of class30
+// the class example32 calls the output from class Example30 
+//it takes it a s the string input from the method stringWithoutSpaces" 
 
 class Example32 {
-    public static void insertSpaces () {
+    public static String insertSpaces () {
         Example30 example30 = new Example30();
         String stringwithoutSpaces = example30.stringWithoutSpaces();
 
@@ -121,5 +125,23 @@ class Example32 {
          //adding white spaces before and after every character on of the input string
          stringwithoutSpaces = stringwithoutSpaces.replaceAll(regex, " ");
          System.out.println(stringwithoutSpaces);
+
+         return stringwithoutSpaces;
+    }
+
+    public String secondAttempt() {
+        return insertSpaces();
+    }
+}
+
+//null is not accepted as regex in the replaceAll () methods as it returns a null pointer exception
+class Example33 {
+    public static void nullRegex () {
+        ReplaceAllMethod instance = new ReplaceAllMethod();
+        String stringOne = instance.getStringOne();
+
+        String regex = "null"; //regex is null
+        stringOne = stringOne.replaceAll(regex, " ");
+        System.out.println(stringOne);
     }
 }
