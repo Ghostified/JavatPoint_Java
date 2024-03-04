@@ -5,7 +5,7 @@ package Strings;
 public class ReplaceAllMethod {
 
     public static final String stringOne = "Welcome to Hogwarts school of Magic";
-    public static final String stringTwo = "The boy who lived , has finally come to die";
+    public static final String stringTwo = "The boy who lived . Has finally come to die ";
 
     public String getStringOne() {
         return stringOne;
@@ -23,6 +23,8 @@ public class ReplaceAllMethod {
         Example29 object1 = new Example29();
         object1.replaceWord();
         
+        Example30  object2 = new Example30();
+        object2.replaceWhiteSpace(); 
     }
 }
 
@@ -46,6 +48,18 @@ class Example29 {
         String replaceString = stringTwo.replaceAll("die", "live");
         System.out.println(replaceString);
 
+
+    }
+}
+
+//use the replaceAll () method to remove white spaces
+class Example30{
+    public static void replaceWhiteSpace () {
+        ReplaceAllMethod instance = new ReplaceAllMethod();
+        String stringOne = instance.getStringOne();
+
+        String replaString = stringOne.replaceAll("\\s", "");
+        System.out.println(replaString);
 
     }
 }
