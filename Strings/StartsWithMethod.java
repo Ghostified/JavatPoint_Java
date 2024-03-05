@@ -12,7 +12,7 @@ import javax.naming.ldap.StartTlsRequest;
  * retturn startsWith(prefix, 0)
  */
 public class StartsWithMethod {
-    public static final String stringOne = "The Wizards of the Wizengamoot";
+    public static final String stringOne ="The Wizards of the Wizengamoot";
 
     public String getStringOne () {
         return stringOne;
@@ -24,6 +24,9 @@ public class StartsWithMethod {
 
         Example38 object1 = new Example38();
         object1.startWithOffset();
+
+        Example39 object2 = new Example39();
+        object2.emptyString();
         
     }
 
@@ -56,5 +59,37 @@ class Example38 {
 
         //offset is one
         System.out.println(stringOne.startsWith("he", 1)); //true
+    }
+}
+
+//if an empty string is added at the beginning of the string is thas no impact to the startsWith () method
+//eg : "" + "String" = "String"
+//proof
+
+class Example39 {
+    public static void emptyString() {
+        
+        //proof one
+        String str = "Expecto Patronum";
+        if (str.startsWith("")) 
+        {
+            System.out.println("The string starts with an empty String"); //true
+        }
+        else 
+        {
+            System.out.println("The string does not start with an empty string"); 
+        }
+
+        //second proof with the final string 
+        StartsWithMethod instance = new StartsWithMethod();
+        String stringOne = instance.getStringOne();
+        if (stringOne.startsWith("")) 
+        {
+            System.out.println("The string starts with an empty String"); //true
+        }
+        else 
+        {
+            System.out.println("The string does not starts with an empty String"); 
+        }
     }
 }
