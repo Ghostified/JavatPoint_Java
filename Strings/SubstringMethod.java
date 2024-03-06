@@ -16,8 +16,11 @@ public class SubstringMethod {
         Example40 object = new Example40();
         object.substringMethod();
 
-        Example41 object2 = new Example41();
-        object2.method2();
+        Example41 object1 = new Example41();
+        object1.method2();
+
+        Application object2 = new Application();
+        object2.extractNames();
 
     }
 }
@@ -46,3 +49,37 @@ class Example41 {
 //application of the substring() Method
 //used to do some prefix or suffix extraction 
 //Filter out names that end in a substring "Potter"
+
+class Application {
+    public static void extractNames () {
+        String names [] = 
+        {
+            "Harry Potter",
+            "James Potter",
+            "Hermione Grannger",
+            "Ron Weasly",
+            "Percy Weasly",
+        };
+
+        String surName = "Potter";
+        int surNameSize = surName.length();
+
+        int size = names.length;
+
+        for (int i =0; i < size;i++)
+        {
+            int length = names[i].length();
+
+            //extracting surname
+            String subStr = names[i].substring(length -surNameSize);
+
+            //checks if the surname is equal to potter or not
+            if (subStr.equals(surName))
+            {
+                System.out.println(names[i]);
+            }
+        }
+
+
+    }
+}
