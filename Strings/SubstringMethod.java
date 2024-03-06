@@ -16,6 +16,9 @@ public class SubstringMethod {
         Example40 object = new Example40();
         object.substringMethod();
 
+        Example41 object2 = new Example41();
+        object2.method2();
+
     }
 }
 
@@ -27,3 +30,19 @@ class Example40  {
         System.out.println(stringOne.substring(2));
     }
 }
+
+class Example41 {
+    public static void method2 () {
+        SubstringMethod instance = new SubstringMethod();
+        String stringOne = instance.getStringOne();
+        System.out.println(stringOne.substring(0));
+        String substr = stringOne;
+        System.out.println(substr.substring(5,10));
+        String substr1 = substr;
+        System.out.println(substr1.substring(5, 15));
+    }
+}
+
+//application of the substring() Method
+//used to do some prefix or suffix extraction 
+//Filter out names that end in a substring "Potter"
