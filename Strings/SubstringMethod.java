@@ -1,4 +1,7 @@
 package Strings;
+
+import java.lang.annotation.AnnotationTypeMismatchException;
+
 /*
  * The substring method returns a part of the string
  * public String substring (int startIndex) //type -1
@@ -21,6 +24,9 @@ public class SubstringMethod {
 
         Application object2 = new Application();
         object2.extractNames();
+
+        Application2 object3 = new Application2();
+        object3.palindromeString();
 
     }
 }
@@ -83,3 +89,59 @@ class Application {
 
     }
 }
+//Check if a string is a palindrome
+ class Application2 
+ {
+
+    public boolean isPalindrome(String str)
+    {
+        int size = str.length();
+
+        //handling the base case
+        if (size ==0|| size == 1)
+        {
+            //an empty string
+            //or a string of one char
+            //is always a palindrome
+            return true;
+        }
+        
+        String f = str.substring(0,1);
+        String l = str.substring(size -1);
+
+        //comp[aring the last char of the string
+        if (l.equals(f))
+        {
+            //recursively finding the solution using the substring() method
+         //reducing the number of characters of the 2 for the next recursion
+            return isPalindrome(str.substring(1, size - 1));
+        }
+        return false;
+    }
+    public static void palindromeString()
+    {
+        //instantiating the Application2 class
+        Application2 instance = new Application2();
+        String str[] = 
+        {
+            "madam",
+            "rock",
+            "eye",
+            "noon",
+            "kill"
+        };
+
+        int size = str.length;
+        for (int j = 0; j < size; j++)
+        {
+            if (instance.isPalindrome(str[j]))
+            {
+                System.out.println(str[j] + " is palindrome");
+            }
+             else 
+             {
+                System.out.println(str[j] + "  is not palindrome");
+             }
+        }
+    }
+ }
