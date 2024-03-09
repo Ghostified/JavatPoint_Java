@@ -15,6 +15,9 @@ public class Regex {
 
         Example2 obj2 = new Example2();
         obj2.regex2();
+
+        Example3 obj3 = new Example3();
+        obj3.regexCharacters();
     }
 }
 class Example1 {
@@ -44,5 +47,13 @@ class Example2 {
         System.out.println(Pattern.matches(".s","mst")); //false - has more than two chars
         System.out.println(Pattern.matches(".s","amms")); //false - has more than two chars
         System.out.println(Pattern.matches("..s","mas")); //true - Third char is s
+    }
+}
+
+class Example3 {
+    public static void regexCharacters () {
+        System.out.println(Pattern.matches("[amn]","abcd")); //false 
+        System.out.println(Pattern.matches("[amn]","a")); //true;
+        System.out.println(Pattern.matches("[amn]","ammmna" )); //false
     }
 }
