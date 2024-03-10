@@ -21,6 +21,9 @@ public class Regex {
 
         Example4 obj4 = new Example4();
         obj4.regexQuantifiers();
+
+        Example5 obj5 = new Example5();
+        obj5.regexMetacharacters();
     }
 }
 class Example1 {
@@ -79,5 +82,25 @@ class Example4 {
 
         System.out.println("*  quantifier");
         System.out.println(Pattern.matches("[amn]*", "ammmna")); //true, a, m or n may come zero or moretimes
+    }
+}
+
+//regex metacharaxcters 
+class Example5 {
+    public static void regexMetacharacters () {
+        System.out.println("Metacharacters d .... ");   // \\d mean digit
+        System.out.println(Pattern.matches("\\d","abc")); //false - non digit
+        System.out.println(Pattern.matches("\\d","1")); //true - digit comes once 
+        System.out.println(Pattern.matches("\\d","4443")); //false - digit but comes more than once
+        System.out.println(Pattern.matches("\\d","323abc")); //false - digit and chat
+
+        System.out.println("Metacharacters D...."); // \\D means non -digit
+        System.out.println(Pattern.matches("\\D","1")); //false (digit)
+        System.out.println(Pattern.matches("\\D","4443")); //false (digit)
+        System.out.println(Pattern.matches("\\D","323abc")); //false (digiy and char)
+        System.out.println(Pattern.matches("\\D","m")); //true (non digit comes once
+        
+        System.out.println("metacharacters D with quantifier...");
+        System.out.println(Pattern.matches("\\D*","mak")); //true (true, non digit and may come once or 0 times )
     }
 }
