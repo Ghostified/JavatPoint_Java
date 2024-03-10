@@ -4,8 +4,10 @@ package Regex;
  * Used to define constraints on emails or passwords
  */
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.*;
 
 public class Regex {
 
@@ -30,6 +32,9 @@ public class Regex {
 
         Example7 obj7 = new Example7();
         obj7.question2();
+
+        Example8 obj8 = new Example8();
+        obj8.application();
     }
 }
 class Example1 {
@@ -138,4 +143,29 @@ class Example5 {
         System.out.println(isValid);
 
     }
+ }
+
+ class Example8 {
+    public static void application () {
+        Scanner scan = new Scanner(System.in);
+        while (true) 
+        {
+            System.out.println("Enter Regex pattern: ");
+            Pattern pattern = Pattern.compile(scan.nextLine());
+            System.out.println("Enter text: ");
+            Matcher matcher = pattern.matcher(scan.nextLine());
+            boolean found = false;
+            while(matcher.find()) {
+                System.out.println("I found the text " + matcher.group() + " starting at index " + matcher.start() + 
+                " and index at index" + matcher.end());
+                found = true;
+            }
+            if (!found)
+            {
+                System.out.println("Match not found");
+            }
+            scan.close();
+        }
+    }
+
  }
