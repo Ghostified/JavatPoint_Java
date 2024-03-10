@@ -27,6 +27,9 @@ public class Regex {
 
         Example6 obj6 = new Example6();
         obj6.question1();
+
+        Example7 obj7 = new Example7();
+        obj7.question2();
     }
 }
 class Example1 {
@@ -118,3 +121,21 @@ class Example5 {
         System.out.println(Pattern.matches("[A-Za-z0-9]{6}","arun$2")); //false ($ is not matched)
     }
  } 
+/*
+ * Create a regular expression that accepts only 10 digit numeric characters,
+ * starting with 7,8 or 9 only
+ */
+ class Example7 {
+    public static void question2 () {
+        
+        //Test input string
+        String input = "1234567890";
+
+        String regex = "[789][0-9]{9}";
+
+        //check if input matches the regex 
+        boolean isValid = Pattern.matches(regex, input);
+        System.out.println(isValid);
+
+    }
+ }
