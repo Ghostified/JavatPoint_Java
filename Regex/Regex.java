@@ -24,6 +24,9 @@ public class Regex {
 
         Example5 obj5 = new Example5();
         obj5.regexMetacharacters();
+
+        Example6 obj6 = new Example6();
+        obj6.question1();
     }
 }
 class Example1 {
@@ -104,3 +107,14 @@ class Example5 {
         System.out.println(Pattern.matches("\\D*","mak")); //true (true, non digit and may come once or 0 times )
     }
 }
+
+//question 1 : Create a regular expression that accepts alphanumeric characters only
+//length must be 6 characters long
+ class Example6 {
+    public static void question1 () {
+        System.out.println(Pattern.matches("[a-zA-Z0-9]{6}", "ARUN32"));//tRUE
+        System.out.println(Pattern.matches("[a-zA-Z0-9]{6}", "kkvarun36")); //false (more than 6 )
+        System.out.println(Pattern.matches("[a-zA-Z0-9]{6}","JA2UK2")); //true
+        System.out.println(Pattern.matches("[A-Za-z0-9]{6}","arun$2")); //false ($ is not matched)
+    }
+ } 
