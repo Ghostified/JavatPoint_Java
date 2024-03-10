@@ -164,6 +164,7 @@ class Example5 {
             {
                 System.out.println("Match not found");
             }
+            scan.close();
         }
     }
 
