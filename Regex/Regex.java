@@ -18,6 +18,9 @@ public class Regex {
 
         Example3 obj3 = new Example3();
         obj3.regexCharacters();
+
+        Example4 obj4 = new Example4();
+        obj4.regexQuantifiers();
     }
 }
 class Example1 {
@@ -55,5 +58,26 @@ class Example3 {
         System.out.println(Pattern.matches("[amn]","abcd")); //false 
         System.out.println(Pattern.matches("[amn]","a")); //true;
         System.out.println(Pattern.matches("[amn]","ammmna" )); //false
+    }
+}
+
+//Regex quantifiers  -Specify the number of occurences  of a character
+class Example4 {
+    public static void regexQuantifiers () {
+        System.out.println("? quantifiers");
+        System.out.println(Pattern.matches("[amn]?","a")); //true a,m,or n comes one times
+        System.out.println(Pattern.matches("[amn]?","aaa")); //false , a comes more than once
+        System.out.println(Pattern.matches("[amn]?", "aammmmnn")); //false a , m & n come more than once
+        System.out.println(Pattern.matches("[amn]?","aazzta" )); //false, a comes more than once
+        System.out.println(Pattern.matches("[amn]?","am")); // a, m.or n must come at least once
+
+        System.out.println("+ quantifier");
+        System.out.println(Pattern.matches("[amn]+","a")); //true  a, m or n appears once or more times
+        System.out.println(Pattern.matches("[amn]+", "aaa")); //true, a comes more than once
+        System.out.println(Pattern.matches("[amn]+", "aammmmn")); //true - a, m or n come more than once
+        System.out.println(Pattern.matches("[amn]+","aazzta")); //false , z and t do ot match the pattern
+
+        System.out.println("*  quantifier");
+        System.out.println(Pattern.matches("[amn]*", "ammmna")); //true, a, m or n may come zero or moretimes
     }
 }
