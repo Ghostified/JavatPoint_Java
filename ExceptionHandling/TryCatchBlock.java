@@ -1,4 +1,11 @@
 package ExceptionHandling;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
+import Strings.indexOfMethod.Example5;
+
 /*
  * Used to enclose code that might throw an exception
  * Must be included within the method
@@ -15,6 +22,9 @@ public class TryCatchBlock {
 
         Example4 obj2 = new Example4();
         obj2.arrayIndexOutOfBounds();
+
+        Example5 obj3 = new Example5();
+        obj3.checkedException();
         
     }
 }
@@ -75,4 +85,22 @@ class Example1{
         }
         System.out.println("Rest of the code ");
     } 
+  }
+  //checked Exceptions - Need to be defined within the code unlike unchecked excep[tion such as arithmetic exceptions
+  class Example5 {
+    public static void checkedException () {
+
+        PrintWriter pw ;
+
+        try {
+            pw = new PrintWriter("jpt.txt");
+            pw.println("saved");
+        }
+
+        //ptoviding the exception handler
+        catch (FileNotFoundException e){
+            System.out.println(e);
+        }
+        System.out.println("File saved successfully");
+    }
   }
