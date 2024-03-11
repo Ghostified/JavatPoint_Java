@@ -12,6 +12,9 @@ public class TryCatchBlock {
 
         Example3 obj1 = new Example3();
         obj1.resolveException();
+
+        Example4 obj2 = new Example4();
+        obj2.arrayIndexOutOfBounds();
         
     }
 }
@@ -59,4 +62,17 @@ class Example1{
             System.out.println(i/(j+2));
         }
     }
+  }
+  class Example4 {
+    public static void arrayIndexOutOfBounds (){
+        try {
+        int [] arr = {1,2,3,4,5};
+        System.out.println(arr[10]); //may throw exception
+        }
+
+        catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println(e);
+        }
+        System.out.println("Rest of the code ");
+    } 
   }
