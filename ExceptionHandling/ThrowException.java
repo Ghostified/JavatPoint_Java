@@ -13,12 +13,16 @@ import java.nio.file.FileAlreadyExistsException;
 public class ThrowException {
 
     public static void main(String[] args) {
+
+        //calling the methods in the classes directly
         Validate1.validation();
 
         FileErrorHandler.fileErrorHandler();
 
         Example27 obj = new Example27();
         obj.userdefinedExceptionHandler();
+
+        Example27.userdefinedExceptionHandler();
     }
 }
 //un unchecked exception
