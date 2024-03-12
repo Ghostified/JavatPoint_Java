@@ -17,7 +17,8 @@ public class ThrowException {
 
         FileErrorHandler.fileErrorHandler();
 
-        
+        Example27 obj = new Example27();
+        obj.userdefinedExceptionHandler();
     }
 }
 //un unchecked exception
@@ -68,5 +69,31 @@ class FileErrorHandler extends Example26 {
             e.printStackTrace();
         }
         System.out.println("restof the code.... ");
+    }
+}
+
+//Throwing a user defined exception
+class UserDefinedException extends Exception 
+{
+    public UserDefinedException(String str)
+    {
+        //calling the constructor of the parent exception 
+        super(str);
+    }
+}
+
+class Example27 {
+    public static void userdefinedExceptionHandler () {
+        try {
+            //throw an object of user defined exception
+            throw new UserDefinedException("Loss of limb will not result to any exceptions");
+        }
+        catch (UserDefinedException ude)
+        {
+            System.out.println("The exception was caught");
+
+            //print message from myException object
+            System.out.println(ude.getMessage());
+        }
     }
 }
