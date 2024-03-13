@@ -19,6 +19,8 @@ public class ThrowException {
 
         FileErrorHandler.fileErrorHandler();
 
+
+        //unconvectional way of accessing static classes 
         Example27 obj = new Example27();
         obj.userdefinedExceptionHandler();
 
