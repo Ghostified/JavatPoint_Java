@@ -10,7 +10,9 @@ public class ThrowsKeyword {
 public static void main(String[] args) {
     TestThrows1 obj = new TestThrows1();
     obj.p();
-    System.out.println("Normal Flow");
+    
+    M.method2();
+
 }
 }
 class TestThrows1 {
@@ -28,5 +30,27 @@ class TestThrows1 {
         {
             System.out.println("Exception Handled");
         }
+        System.out.println("Normal Flow");
     }
 }
+
+//if we are calling a method that declares an exception , it must be caught or declared
+//if an exception is handled, the code is executed wether exception occurs or not
+
+class M {
+    static void  method() throws IOException {
+        throw new IOException("Device error");
+    }
+
+    static void  method2 () {
+        try {
+            M m = new M();
+            m.method();
+        }
+        catch (Exception e) {
+            System.out.println("Exception Handled");
+        }
+        System.out.println("Normal Flow");
+    }
+}
+
