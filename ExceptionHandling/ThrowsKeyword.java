@@ -2,7 +2,6 @@ package ExceptionHandling;
 
 import java.io.IOException;
 
-import Enscapulation.Example2.TestAccount;
 
 /*
  * The thows keyword id used to declare an exception
@@ -18,6 +17,9 @@ public static void main(String[] args) {
     TestThrow3.CheckNum(-3);
 
     TestThrows4.catchMethod();
+
+    //catch exceptions form the ThrowadThrows Class
+    CatcchThrowandThrows.catchExceptions();
 
 }
 }
@@ -50,8 +52,7 @@ class M {
 
     static void  method2 () {
         try {
-            M m = new M();
-            m.method();
+            M.method();
         }
         catch (Exception e) {
             System.out.println("Exception Handled");
@@ -100,3 +101,24 @@ class TestThrows4 {
     }
  }
 }
+//Throw and Throws example
+class ThrowandThrows {
+    //defining a user defined method which throws an arithmetic exception
+    static void method4() throws ArithmeticException {
+        System.out.println("Inside the method");
+        throw new ArithmeticException("Throwing the arithmentic exception");
+    }
+}
+class CatcchThrowandThrows{
+    static void catchExceptions () {
+        //call method4() from throw and throws class
+        try {
+            ThrowandThrows.method4();
+        }
+        catch (ArithmeticException e)
+        {
+            System.out.println("Caught in main");
+        }
+    }
+}
+
