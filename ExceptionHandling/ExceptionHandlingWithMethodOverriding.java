@@ -8,6 +8,8 @@ public class ExceptionHandlingWithMethodOverriding {
            // TestExceptionChild obj = new TestExceptionChild();
             // obj.msg(); //results in a comple time error
 
+            TestExceptionChild1.msg();
+
     }
 
 }
@@ -28,3 +30,12 @@ class TestExceptionChild extends Parent {
     }
 }
 
+//if a superclass method does not declare an exception
+//the subclass  overriden method can not declare a checked exception
+//it can only declare an unchecked exception
+
+class TestExceptionChild1 extends Parent{
+    static void msg() throws ArithmeticException {
+        System.out.println("child method");
+    }
+}
