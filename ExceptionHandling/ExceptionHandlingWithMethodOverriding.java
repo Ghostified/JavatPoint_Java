@@ -4,6 +4,7 @@ import java.io.IOError;
 import java.io.IOException;
 
 import Arrays.BasicOperations.ArrayOnEvenPosistion;
+import NestedLoops.pattern14;
 
 public class ExceptionHandlingWithMethodOverriding {
     public static void main(String[] args) throws Exception {
@@ -25,6 +26,9 @@ public class ExceptionHandlingWithMethodOverriding {
 
             //calling the TesctException4 child object
             TestExceptionChild4.msg();
+
+            //calling the testException5 Method
+            TestChildException5.msg();
 
     }
 
@@ -96,4 +100,15 @@ class TestExceptionChild4  extends Parent1{
         }
 
     }
+}
+
+//example of a subclass overriden method does not declare any exception
+class TestChildException5 extends Parent1{
+     static void msg () {
+        try {
+            System.out.println("Child class does not decalre any exception");
+        } catch (ArithmeticException e) {
+            System.out.println(e);
+        }
+     }
 }
