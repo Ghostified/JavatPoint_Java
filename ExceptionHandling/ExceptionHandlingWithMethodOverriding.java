@@ -6,7 +6,7 @@ import java.io.IOException;
 import Arrays.BasicOperations.ArrayOnEvenPosistion;
 
 public class ExceptionHandlingWithMethodOverriding {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
            // TestExceptionChild obj = new TestExceptionChild();
             // obj.msg(); //results in a comple time error
 
@@ -22,6 +22,9 @@ public class ExceptionHandlingWithMethodOverriding {
 
             //calling the TestException3 child class method
             TestException3.msg();
+
+            //calling the TesctException4 child object
+            TestExceptionChild4.msg();
 
     }
 
@@ -81,4 +84,16 @@ class TestException3 extends Parent1{
             System.out.println("Exception handled");
         }
         }
+}
+//example of subclass overriden method declares a subclass Exception
+class TestExceptionChild4  extends Parent1{
+    static void msg() throws Exception{
+        try {
+            System.out.println("Child class, excecuted");
+        } catch (Exception e)
+        {
+            System.out.println(e);
+        }
+
+    }
 }
