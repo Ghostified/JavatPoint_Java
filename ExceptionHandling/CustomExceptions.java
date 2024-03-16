@@ -35,6 +35,8 @@ public class CustomExceptions {
         // TODO Auto-generated catch block
         e.printStackTrace();
     }
+
+    CustomExceptions10.somethod();
     }
 }
 
@@ -69,3 +71,22 @@ class InvalidAgeException extends Exception {
         System.out.println("rest of the code");
     }
  }
+class MyCustomException extends Exception {
+
+}
+class CustomExceptions10 {
+
+    static void somethod () {
+        try {
+
+            //Throw an object of user defined exception
+            throw new MyCustomException();
+        } catch (MyCustomException e)
+        {
+            System.out.println("Exception caught ");
+            System.out.println(e.getMessage());
+        }
+        System.out.println("The  rest of the code: ");
+    }
+
+}
