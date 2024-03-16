@@ -12,6 +12,8 @@ package InnerClasses;
 public class MemberInnerClasses {
     public static void main(String[] args) {
         TestMemberOuter1 obj = new TestMemberOuter1();
+
+        //instantiating /creating an object of the member inner class: 
         TestMemberOuter1.Inner obj2 = obj.new Inner();
         obj2.msg();
     }
