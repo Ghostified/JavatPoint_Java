@@ -10,6 +10,14 @@ public class ExceptionHandlingWithMethodOverriding {
 
             TestExceptionChild1.msg();
 
+            //this object of the child class returns a compile time error
+            // TestExceptionChild2 obj1 = new TestExceptionChild2();
+            // try {
+            //     obj1.mesg();
+            // } catch(Exception e) {
+            //     System.out.println(e);
+            // }
+
     }
 
 }
@@ -37,5 +45,23 @@ class TestExceptionChild extends Parent {
 class TestExceptionChild1 extends Parent{
     static void msg() throws ArithmeticException {
         System.out.println("child method");
+    }
+}
+//if a superclass method declares an exception, 
+//subclass overriden method can declare the same subclass exception or no exception
+//subcall overriden method can not declare the parent exception
+//example of a subclass overriden method declares a parent exception
+class Parent1 {
+    static void mesg () throws ArithmeticException {
+    System.out.println("Parent1 Method");
+    }
+}
+class TestExceptionChild2 extends Parent1 {
+    static void mesg () throws Exception{
+        //try{
+        System.out.println("Child class");
+    // } catch (Exception e){
+    //     System.out.println(e);
+    // }
     }
 }
