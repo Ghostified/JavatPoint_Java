@@ -3,6 +3,8 @@ package ExceptionHandling;
 import java.io.IOError;
 import java.io.IOException;
 
+import Arrays.BasicOperations.ArrayOnEvenPosistion;
+
 public class ExceptionHandlingWithMethodOverriding {
     public static void main(String[] args) {
            // TestExceptionChild obj = new TestExceptionChild();
@@ -17,6 +19,9 @@ public class ExceptionHandlingWithMethodOverriding {
             // } catch(Exception e) {
             //     System.out.println(e);
             // }
+
+            //calling the TestException3 child class method
+            TestException3.msg();
 
     }
 
@@ -64,4 +69,16 @@ class TestExceptionChild2 extends Parent1 {
     //     System.out.println(e);
     // }
     }
+}
+//Example of when an overriden child class declares the same exception as the parent method
+
+class TestException3 extends Parent1{
+    static void msg () throws ArithmeticException {
+        try {
+            int data = 40/0;
+            System.out.println(data);
+        }catch (Exception e) {
+            System.out.println("Exception handled");
+        }
+        }
 }
