@@ -11,8 +11,11 @@ public class StaticNestedClass {
         //accessing the static class by the outer class
         OuterClass.StaticNestedClass obj = new OuterClass.StaticNestedClass();
         obj.display();
-    }
 
+        //Accessing the static nested class using the name of the  outer class
+        OuterClass2.Inner2 obj2 = new OuterClass2.Inner2 ();
+        obj2.show();
+    }
 }
 class OuterClass {
 
@@ -34,4 +37,14 @@ class OuterClass {
             System.out.println( "Local variable is  "+ localVar);
         }
     }
+}
+
+//Second Example 
+class OuterClass2 {
+     private static int data = 70;
+     static class Inner2 {
+        void show () {
+            System.out.println("Showing the member of the outer class " + data);
+        }
+     }
 }
