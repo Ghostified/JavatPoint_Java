@@ -11,6 +11,7 @@ public class LocalInnerClass {
         LocalInner1 obj = new LocalInner1();
         obj.display();
 
+        //example of local inner class with a  local variable
         LocalInner2 obj2 = new LocalInner2();
         obj2.dispaly();
     }
