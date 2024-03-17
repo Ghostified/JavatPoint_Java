@@ -10,9 +10,19 @@ public interface NestedInterfaces {
 
     public static void main(String[] args) {
 
-        //upcasting 
+        //Creating an object of the implementing class  TestNested Interface
         Showable.Message message = new TestNestedInterface();
         message.msg();
+
+        //creating an object of the implementing class, MyClass
+        MyClass object = new MyClass();
+        //calling the method of the outerInterface
+        object.outerMethod();
+
+        //creating an object of the nested class 
+        MyClass.NestedClass nestedObject = new MyClass.NestedClass();
+        //calling the method of the nested interface
+        nestedObject.nestedMethod();
     }
    
 }
@@ -27,5 +37,36 @@ interface Showable {
 class TestNestedInterface implements Showable.Message {
     public void msg() {
         System.out.println("hello nested interface");
+    }
+}
+
+//second example of nested intrafaces and its implementation
+//Outer interface
+interface Outerinterface {
+    //method of outer interface 
+    void outerMethod ();
+
+    //nested Interface
+    public interface NestedInterface {
+        //method of Nested Interface
+        void nestedMethod ();
+    }
+}
+
+//implementing class for outer interface 
+class MyClass implements Outerinterface {
+    //implementing method for outer interface 
+
+    public void outerMethod () {
+        System.out.println("Implementation of the outer method");
+    }
+
+    //implementing the nested interface within the class 
+    public static class NestedClass implements Outerinterface.NestedInterface {
+        
+        //implementing methods of the nested interface 
+        public void nestedMethod () {
+            System.out.println("Implementation of the nested method");
+        }
     }
 }
