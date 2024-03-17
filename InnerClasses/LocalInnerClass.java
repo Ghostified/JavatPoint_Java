@@ -10,6 +10,9 @@ public class LocalInnerClass {
     public static void main(String[] args) {
         LocalInner1 obj = new LocalInner1();
         obj.display();
+
+        LocalInner2 obj2 = new LocalInner2();
+        obj2.dispaly();
     }
 
 }
@@ -24,4 +27,20 @@ class LocalInner1 {
         Local one = new Local ();
         one.msg();
     }
+}
+class LocalInner2{
+
+    private int data = 40;// instance variable
+    void dispaly () {
+        int value = 50; //local variable
+
+        class Local {
+            void msg() {
+                System.out.println(value);
+            }
+        }
+        Local two = new Local();
+        two.msg();
+    }
+
 }
