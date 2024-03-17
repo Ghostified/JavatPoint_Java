@@ -15,6 +15,10 @@ public class StaticNestedClass {
         //Accessing the static nested class using the name of the  outer class
         OuterClass2.Inner2 obj2 = new OuterClass2.Inner2 ();
         obj2.show();
+
+        //Accessing the static member of the static inner class without having to create an instance of the 
+        //static nested class
+        OuterClass3.Inner3.showing ();
     }
 }
 class OuterClass {
@@ -47,4 +51,16 @@ class OuterClass2 {
             System.out.println("Showing the member of the outer class " + data);
         }
      }
+}
+//if you have a the static member inside the static nested class
+//one does not need to create an instance of the nested class
+//eg in the code below , the meber showing 2 is static 
+ 
+class OuterClass3 {
+    static int data = 59;
+    static class Inner3 {
+        static void showing () {
+            System.out.println("The data from the outer class in example OuterClass3 is " + data);
+        }
+    }
 }
