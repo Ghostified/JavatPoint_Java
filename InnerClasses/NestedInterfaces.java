@@ -23,6 +23,11 @@ public interface NestedInterfaces {
         MyClass.NestedClass nestedObject = new MyClass.NestedClass();
         //calling the method of the nested interface
         nestedObject.nestedMethod();
+
+        //Creating an object of Class A
+        A.Message object2 = new TestNestedInterface2();
+        object2.msg();
+    
     }
    
 }
@@ -68,5 +73,20 @@ class MyClass implements Outerinterface {
         public void nestedMethod () {
             System.out.println("Implementation of the nested method");
         }
+    }
+}
+
+//Example of Nested interface declared within a class
+//An interface can be declared within a class and accessed
+
+class A {
+    interface Message {
+        void msg ();
+    }
+}
+
+class TestNestedInterface2 implements A.Message {
+    public void msg(){
+        System.out.println("Hello Nested Interfaces");
     }
 }
