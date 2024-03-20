@@ -2,6 +2,7 @@ package InputAndOutput;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.SequenceInputStream;
 
 /*
@@ -12,6 +13,8 @@ public class SequenceInputStreamClass {
     Example1.inputStreamExample();
 
     ReadingTwofiles.concurrentReadAndWrite();
+
+    Example3.sequenceInput();
  }
 }
  class Example1 {
@@ -48,5 +51,29 @@ public class SequenceInputStreamClass {
         file1.close();
         file2.close();
         System.out.println("Success");
+    }
+ }
+
+ class Example3 {
+    static void sequenceInput () {
+        try {
+            //Creating two input streams
+            FileInputStream fis = new FileInputStream ("C:\\Users\\allan.branson\\Downloads\\testinput.txt");
+            FileInputStream fis2 = new FileInputStream("C:\\Users\\allan.branson\\Downloads\\testout.txt");
+
+            //creating a sequenceInputStream by combining the two input stream
+            SequenceInputStream sis = new SequenceInputStream(fis, fis2);
+
+            //Reading the data from the Sequence input stream
+            int data ;
+            while ((data = sis.read()) != -1) {
+                System.out.println((char)data); //Print characters from the the stream
+            }
+
+          //  closing the sequenceInput();
+          sis.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
  }
