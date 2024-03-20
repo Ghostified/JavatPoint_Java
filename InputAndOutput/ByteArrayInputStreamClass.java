@@ -9,6 +9,7 @@ import java.io.IOException;
 public class ByteArrayInputStreamClass {
     public static void main(String[] args) {
         byteArrayInputStream();
+        example2();
         
     }
     public static void byteArrayInputStream () {
@@ -56,6 +57,23 @@ public class ByteArrayInputStreamClass {
 
 
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void example2 () {
+        try {
+            byte [] buf = { 23, 24, 25, 26, 27};
+
+            //create  the new byte array Input Stream 
+            ByteArrayInputStream input = new ByteArrayInputStream(buf);
+            int k = 0;
+            while ((k = input.read()) != -1){
+                //convertion of a byte into acharacter
+                char ch = (char) k ;//casting
+                System.out.println("ASCII value of character is " + k + " ; special character is: " + ch);
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
