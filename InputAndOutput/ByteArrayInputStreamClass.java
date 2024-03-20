@@ -15,7 +15,7 @@ public class ByteArrayInputStreamClass {
         try {
 
             //Create a byte array
-            byte [] byteArray = "Hello, Griggotts ".getBytes();
+            byte [] byteArray = "Hello, Gringotts ".getBytes();
 
             //create a ByteArrayInputStream using the new byte array
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArray);
@@ -37,6 +37,19 @@ public class ByteArrayInputStreamClass {
 
             //print the the bytes read into the buffer as a string
             System.out.println(new String(buffer, 0, bytesRead));
+
+            //Print the remaining bytes that can be read from the input stream
+            System.out.println(byteArrayInputStream.available());
+
+            //Skip the x bytes of input from the input stream 
+            long bytesSkipped = byteArrayInputStream.skip(5);
+            System.out.println("skipped " + bytesSkipped + " bytes.");
+            int remainingBytes;
+            while ((remainingBytes = byteArrayInputStream.read()) != -1) {
+                System.out.println((char) remainingBytes);
+            }
+            System.out.println(byteArrayInputStream.skip(5));
+            
 
             //close the BytesArrayInputStream
             byteArrayInputStream.close();
