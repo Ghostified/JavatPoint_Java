@@ -3,6 +3,7 @@ package InputAndOutput;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.Socket;
 
 import javax.sound.midi.Soundbank;
@@ -13,6 +14,7 @@ import javax.sound.midi.Soundbank;
 public class DataInputStreamClass {
  public static void main(String[] args) {
     dataInputStreamMethods();
+    example2();
     
  }
 
@@ -32,14 +34,6 @@ public class DataInputStreamClass {
         float floatValue = dis.readFloat();
         double doubles = dis.readDouble();
 
-        //Read a string as a byte sequence
-        //byte [] bytes  = new byte[10];
-       // dis.read(bytes);
-       // String stringValue = new String(bytes);
-
-        //Read a string using UTF-8 encoding
-       // String utfStringValue = dis.readUTF();
-
         //print the read data
         System.out.println("Byte value: " + readByte);
         System.out.println("Short value : " + shortValue);
@@ -55,6 +49,24 @@ public class DataInputStreamClass {
         dis.close();
 
     } catch (IOException   e) {
+        e.printStackTrace();
+    }
+ }
+
+ public static void example2 () {
+    try {
+        InputStream input = new FileInputStream("C:\\Users\\allan.branson\\Downloads\\testout.txt"); 
+
+        DataInputStream instance = new DataInputStream(input);
+        int count = input.available();
+        byte [] arr =new byte[count];
+        instance.read(arr);
+
+        for (byte bt : arr){
+            char k = (char) bt;
+            System.out.println(k + " ");
+        }
+    } catch (IOException e) {
         e.printStackTrace();
     }
  }
