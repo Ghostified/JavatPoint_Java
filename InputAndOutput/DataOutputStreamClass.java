@@ -32,7 +32,8 @@ public class DataOutputStreamClass {
             dos.writeByte(34); //write byte
             dos.writeDouble(3.14); //write double
             dos.writeBoolean(false); //write bool
-            dos.writeUTF("Hello Hogwarts"); //write  a UF=TF encoded string
+            dos.writeUTF("Hello Hogwarts"); //write  a UF=TF encoded stringi
+            dos.writeLong(237383399L);
             
 
             dos.flush();
@@ -44,5 +45,5 @@ public class DataOutputStreamClass {
         }
     }
 
-    
+
 }
