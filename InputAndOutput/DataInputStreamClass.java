@@ -4,9 +4,7 @@ import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.Socket;
 
-import javax.sound.midi.Soundbank;
 
 /*
  * DataInputStreamClass  allows an application to read primitive data types
