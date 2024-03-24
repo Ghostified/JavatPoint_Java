@@ -17,6 +17,9 @@ public class FilePermissionClass {
 
         //Calling the file permission example
         FilePermissionExample();
+
+        //Calling example2 Method
+        PermissionsExample2();
         
     }
 
@@ -42,6 +45,33 @@ public class FilePermissionClass {
             e.printStackTrace();
         }
 
+    }
+
+    //Permission methods 
+    public static void PermissionsExample2 () {
+        //Directory path with recursive permissionfor read action
+        String directoryPathRecursive = "D:\\IO\\-";
+        //File path with write permissions
+        String filePathWrite = "D:\\IO\\example.text";
+
+        //creating FilePermissionObjects for directory and file
+        FilePermission directoryPermission = new FilePermission(directoryPathRecursive, "read");
+        FilePermission filePermission = new FilePermission( filePathWrite , "write");
+
+        //checking if file permission refers to directory permission
+        if (filePermission.implies(directoryPermission)) {
+            System.out.println("File Permission implies directory permission");
+        } else {
+            System.out.println("File permission does not imply directory permission");
+        }
+
+
+        //checking if directory permission implies file permission
+        if (directoryPermission.implies(filePermission)) {
+            System.out.println("Directory permission implys file permission");
+        } else {
+            System.out.println("Directory permission does not imply file permission");
+        }
     }
 
 }
