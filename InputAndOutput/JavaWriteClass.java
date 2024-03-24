@@ -15,9 +15,19 @@ public class JavaWriteClass {
 
     public static void writerExample1 () {
         try {
+            //Create a file writer to write to a file
             Writer w = new FileWriter("Ouput.txt");
+
+            //write characters using various methods
             String content = "Welcome to Hogwarts";
             w.write(content);
+
+            w.write("Hello Hogwarts!\n");
+
+            //flusgh the stream to ensure all the data is written
+            w.flush();
+
+            //close stream to release resources 
             w.close();
             System.out.println("Done");
 
