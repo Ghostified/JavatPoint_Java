@@ -13,9 +13,10 @@ import java.nio.BufferUnderflowException;
 public class BufferedReaderClass {
 
     public static void main(String[] args) {
-        readingText();
+       readingText();
         readFromConsole();
         readConsole();
+        bufferMethods();
         
     }
 
@@ -67,5 +68,15 @@ public class BufferedReaderClass {
             e.printStackTrace();
         }
     }
-
+    public static void bufferMethods () {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\allan.branson\\Downloads\\testout.txt")))
+        {
+             String line ;
+            while((line  = reader.readLine()) != null) {
+            System.out.println(line);
+         } 
+     } catch (IOException e) {
+    e.printStackTrace();
+     } 
+    }
 }
