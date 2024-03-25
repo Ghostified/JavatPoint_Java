@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.BufferUnderflowException;
 
 /*
  * The BufferedReader class is used to read the text from a character based input stream 
@@ -12,8 +13,9 @@ import java.io.InputStreamReader;
 public class BufferedReaderClass {
 
     public static void main(String[] args) {
-        //readingText();
+        readingText();
         readFromConsole();
+        readConsole();
         
     }
 
@@ -44,4 +46,26 @@ public class BufferedReaderClass {
             E.printStackTrace();
         }
     }
+
+    //Reading  from the console until the user writes stop
+    public static void readConsole () {
+        try {
+
+            InputStreamReader readConsole = new InputStreamReader(System.in);
+            BufferedReader buffer = new BufferedReader(readConsole);
+            String name = "";
+            while (!name.equals("stop")){
+                System.out.println("Enter a string");
+                name = buffer.readLine();
+                System.out.println("The strings entered are: " + name);
+            }
+            buffer.close();
+            readConsole.close();
+
+
+        } catch (IOException e ) {
+            e.printStackTrace();
+        }
+    }
+
 }
