@@ -14,6 +14,7 @@ public class PrintStreamClass {
 
     public static void main(String[] args) {
         printStream();
+        printStreamMethods();gi
         
     }
 
@@ -46,5 +47,30 @@ public class PrintStreamClass {
         } catch (IOException e) {
             e.printStackTrace();
         }
+     }
+
+     public static void printStreamMethods () {
+        //create a printstream object for system.out
+        PrintStream ps = new PrintStream(System.out);
+
+        //Print diffrent data types 
+        ps.printf("Hello") ;  //string
+        ps.print (124); //int
+        ps.println();//new line
+
+        //println methods 
+        ps.println(true); //boolean
+        ps.println('C'); //char
+        ps.println (new char [] {'a','b','c','d'}); //char array
+        ps.println(456);
+        ps.println (785L) ; //long
+        ps.println (3.14f); 
+        ps.println(new Object());
+
+        //printf method
+        ps.printf("The value of %s is %.2f%n", "PI", Math.PI); //Formartted string
+
+        //close the PrintStream
+        ps.close();
      }
 }
