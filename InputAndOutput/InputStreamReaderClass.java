@@ -12,6 +12,7 @@ import java.io.Reader;
 public class InputStreamReaderClass {
     public static void main(String[] args) {
         Example20();
+        InputStreamReaderMethods();
         
     }
 
@@ -29,4 +30,35 @@ public class InputStreamReaderClass {
             e.printStackTrace();
         }
     }
+
+    /*
+     * Creating ana InputStreamReader with diffrent constructors
+     * Reading files with the read() method
+     * Check i the stream is ready to be read using the ready () method
+     * closing the stream with the close () method
+     */
+
+     public static void InputStreamReaderMethods () {
+        String filepath = "C:\\Users\\allan.branson\\Downloads\\testout.txt";
+
+        try (InputStream inputStream = new FileInputStream(filepath)){
+
+            //Creating an INputStreamReader  using the default constructor encoding
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+
+            //Reading characters from the file with the read () method
+            int charCode ;
+            while ((charCode = inputStreamReader.read()) != -1) {
+
+                //convert the character code to char and print
+                char character = (char) charCode;
+                System.out.println(character);
+            }
+
+            //closing the stream
+            inputStreamReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+     }
 }
