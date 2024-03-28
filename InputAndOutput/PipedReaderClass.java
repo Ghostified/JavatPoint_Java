@@ -15,7 +15,8 @@ import java.io.PipedWriter;
 public class PipedReaderClass {
 
     public static void main(String[] args) {
-        pipedReaderMethods();
+        //pipedReaderMethods();
+        pipedReaderClass();
         
     }
 
@@ -60,5 +61,42 @@ public class PipedReaderClass {
         }
      });
      readerThread.start();
+   }
+
+   //Example 2
+   public static void pipedReaderClass () {
+    try {
+        final PipedReader read = new PipedReader();
+        final PipedWriter write = new PipedWriter(read);
+
+        Thread readerThread = new Thread( new Runnable() {
+                    public void run () {
+                        try {
+                            int data = read.read();
+                            while (data != -1) {
+                                System.out.println((char) data);
+                                data = read.read();
+                            }
+                        }catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                });
+        
+                Thread writerThread = new Thread( new Runnable() {
+                    public void run () {
+                        try {
+                            write.write("Welcome to threads \n".toCharArray());
+                        } catch (Exception e){
+                            e.getMessage();
+                        }
+                    }
+                });
+        
+                readerThread.start();
+                writerThread.start();
+    } catch (Exception e ) {
+        e.printStackTrace();
+    }
    }
 }
