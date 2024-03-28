@@ -1,5 +1,6 @@
 package InputAndOutput;
 
+import java.io.IOException;
 import java.io.PipedReader;
 import java.io.PipedWriter;
 
@@ -11,6 +12,7 @@ public class PipedWriterClass {
 
     public static void main(String[] args) {
          pipedWriter();
+         pipedWriterMethods();
     }
 
     public static void pipedWriter () {
@@ -49,5 +51,60 @@ public class PipedWriterClass {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    public static void pipedWriterMethods () {
+       //PipedWriter is used to write data into a pipe which is unidirectional between two threads
+       /*
+        * Used when one thread is one thread nneeds to pass data to another thread in inter thread communication
+        //Data written to a pipewriter can be read from the pipe reader and not vice versa
+        //commonly used when where one thread  (producer) writes data to the pipe and another thread(consumer) reads data from it
+        //Before using a pipeWriter , it needs to be connected to a pipe reader using the connection method
+        */
+
+        //example
+        //craete  a PipeWriter and PipeReader
+        PipedWriter pipedWriter = new PipedWriter();
+        PipedReader pipedReader = new PipedReader();
+
+        try {
+            //Connect the PipedWriter to the PipedReader
+            pipedWriter.connect(pipedReader);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        //Create and start a thread
+        Thread writerThread= new Thread( () -> {
+            try {
+                //write data to the PipedWriter
+                pipedWriter.write("Hello PipedWriter!".toCharArray());
+                pipedWriter.flush();
+                pipedWriter.close();
+
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+        writerThread.start();
+
+        //create and start a reader Thread
+        Thread readerThread = new Thread(() -> {
+            try {
+                //Read data from the PipedReader
+                int character ;
+                while ((character = pipedReader.read()) != -1){
+                    System.out.println((char)character);
+                }
+                pipedReader.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+        readerThread.start();
+
+        
     }
 }
