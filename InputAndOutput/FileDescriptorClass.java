@@ -12,6 +12,7 @@ import java.io.IOException;
 public class FileDescriptorClass {
     public static void main (String [] Args) {
         fileDescriptor();
+        example();
 
     }
 
@@ -37,4 +38,23 @@ public class FileDescriptorClass {
             e.printStackTrace();;
         }
     }
+
+    //Example that createa a FileDescriptor object with starndard output .out
+    //Then a FileOutputStream using the FileDescriptor to write data to it
+    //Effectively writing to the starndard Ouput stream
+
+    public static void example () {
+        try {
+            FileDescriptor fd = new FileDescriptor();
+
+            //writing  to starndard output using the the file descrptor
+            FileOutputStream fos = new FileOutputStream(fd);
+            fos.write ("Hello, FileDescriptor " .getBytes());
+            fos.close();
+
+        } catch (IOException e) {
+            e.getMessage();
+        }
+    }
+
 }
