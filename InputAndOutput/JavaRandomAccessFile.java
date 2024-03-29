@@ -12,6 +12,8 @@ public class JavaRandomAccessFile {
     public static void main(String[] args) {
         RandomAccessFileExample obj = new RandomAccessFileExample();
         obj.randomAccessFileExample();
+
+        RandomAccessFileExample2.randomAccessFileExample2();
         
     }
 
@@ -49,4 +51,31 @@ class RandomAccessFileExample {
         }
     
     }
+ class RandomAccessFileExample2 {
+    public static void randomAccessFileExample2 () {
 
+        //RandomAccessFileExample2 Instance  = new RandomAccessFileExample2();
+
+        try {
+            //create a RandomAccessFile in read-write mode
+            RandomAccessFile file = new RandomAccessFile("Example.txt", "rw");
+
+
+            //Write data to the file
+            file.writeUTF("Hogwarts christmas pudding");
+            
+            //set pointer to the beginning of the file
+            file.seek(0);
+
+            //Read data from the file
+            String data = file.readUTF();
+            System.out.println("Data from the file : "+ data);
+
+            //close the file
+            file.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+ }
