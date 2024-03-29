@@ -10,8 +10,9 @@ import java.io.IOException;
 public class FileClass {
 
     public static void main(String[] args) {
-        createFile();
-        fileDemo();
+        //createFile();
+        //fileDemo();
+        checkFileInfo();
     }
 
     //Create a file
@@ -49,12 +50,20 @@ public class FileClass {
             //check if file exists
             if (bool) {
                 //prints
-                System.out.println(path + "Exists? " + bool);
+                System.out.println(path + " Exists? " + bool);
             }
 
         } catch (Exception e) {
             //if any error occurs 
             e.printStackTrace();
+        }
+    }
+
+    public static void checkFileInfo (){
+        File f = new File ("C:\\Users\\allan.branson\\Downloads");
+        String filenames [] = f.list();
+        for (String filename:filenames) {
+            System.out.println(filename);
         }
     }
 }
