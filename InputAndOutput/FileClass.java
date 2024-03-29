@@ -12,7 +12,8 @@ public class FileClass {
     public static void main(String[] args) {
         //createFile();
         //fileDemo();
-        checkFileInfo();
+        //checkFileInfo();
+        directoryDetails();
     }
 
     //Create a file
@@ -64,6 +65,15 @@ public class FileClass {
         String filenames [] = f.list();
         for (String filename:filenames) {
             System.out.println(filename);
+        }
+    }
+
+    public static void directoryDetails () {
+        File dir = new File ("C:\\Users\\allan.branson\\Documents");
+        File files [] = dir.listFiles();
+        for (File file:files) {
+            System.out.println(file.getName()+ " can write: " + file.canWrite() +
+             "  Is Hidden : " +file.isHidden() + " Length:  " +file.length() + " bytes");
         }
     }
 }
