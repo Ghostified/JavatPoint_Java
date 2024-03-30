@@ -9,7 +9,8 @@ public class ScannerClass {
 
     public static void main(String[] args) {
         //takeUserInput();
-        takeUserInput2();
+        //takeUserInput2();
+        takeUserInput3();
         
      }
 
@@ -96,5 +97,27 @@ public class ScannerClass {
                 in.close();
             }
         }
+       
         
+        //Example three 
+        public static void takeUserInput3 () {
+            String str = "I /solemnly swear /that am upto /no good";
+
+            //create scanner withh the specified String object
+            Scanner scanner = new Scanner(str);
+            System.out.println("Boolean Result: "  + scanner.hasNextBoolean());
+
+            //Change the delimitter of tghe scanner
+            scanner.useDelimiter("/");
+
+            //Print the tokenized string
+            System.out.println("-------Tokenized String-------");
+            while(scanner.hasNext()){
+                System.out.println(scanner.next());
+            }
+
+            //display the delimitter
+            System.out.println("Delimitter used: "+ scanner.delimiter());
+            scanner.close();
+  }
 }
