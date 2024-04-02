@@ -303,6 +303,7 @@ public class ScannerClassMethods {
                 fileScanner.close();
                 userInputScanner.close();;
 
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
