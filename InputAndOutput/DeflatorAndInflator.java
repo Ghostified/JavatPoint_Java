@@ -7,11 +7,13 @@ package InputAndOutput;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.zip.DeflaterOutputStream;
+import java.util.zip.InflaterInputStream;
 
 public class DeflatorAndInflator {
 
     public static void main(String[] args) {
         compressFile();
+       decompressFile();
 
     }
 
@@ -36,6 +38,33 @@ public class DeflatorAndInflator {
             System.out.println(e);
         }
         System.out.println("The rest of the code");
+    }
+
+    //InflatorInputStream
+    //The InflatorInputStream Class is used to decompress the file in deflate Compress formart
+    //Example of decompressing a file
+
+    static void decompressFile () {
+        try {
+
+            FileInputStream fin = new FileInputStream("Output.txt");
+            InflaterInputStream inflator = new InflaterInputStream(fin);
+            FileOutputStream fout = new FileOutputStream("jpt.txt");
+
+            int i ;
+            while ((i=fin.read()) != -1) {
+                fout.write((byte)i);
+                fout.flush();
+            }
+
+            fin.close();
+            fout.close();
+
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        System.out.println("Rest of the code");
     }
 
 }
