@@ -7,13 +7,16 @@ package SerializationRelationships;
      * The transient keyword can also be used with class data members to prevent their serialization
      */
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class TransientKeyword{
     public static void main(String[] args) throws Exception{
         PersistExample.transientExample();
+        DeSerialize.deserialize();
     }
 
 }
@@ -44,4 +47,16 @@ class PersistExample  {
         fout.close();
         System.out.println("Success");
     }
+}
+
+//trying to deserialize 
+class DeSerialize {
+    public static void deserialize () throws Exception {
+        TransientKeyword instance = new TransientKeyword();
+        ObjectInputStream obj = new ObjectInputStream(new FileInputStream("f.txt"));
+        Student2 s2 = (Student2)obj.readObject();
+        System.out.println(s2.id + " "+ s2.name + " " +s2.age);
+        obj.close();
+    }
+
 }
