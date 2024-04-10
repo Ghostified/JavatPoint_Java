@@ -12,8 +12,8 @@ public class CreatingFrames {
 
     public static void main (String [] Args) {
         
-       // CreateFrameByInheritance obj = new CreateFrameByInheritance();
-        //obj.AWTEXample1();
+        CreateFrameByInheritance obj = new CreateFrameByInheritance();
+        obj.AWTEXample1();
 
         createFrameByAssociation();
 
