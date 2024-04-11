@@ -1,13 +1,22 @@
 package Swing;
+import java.awt.event.ActionListener;
+import java.awt.event.*;
+
 import javax.swing.*;
 
 import javax.swing.JButton;
+
+/*
+ * JFrames can be created by extending the Frame class Inheritance 
+ * By craeting an object of the Frame class (Association)
+ */
 
 public class Swing {
 
     public static void main(String[] args) {
 
-        swingExample1();
+        //swingExample1();
+        buttonWithEvent();
         
     }
 
@@ -27,5 +36,26 @@ public class Swing {
         f.setVisible(true);
 
 
+    }
+
+    //jbutton with an actiuon listener
+
+    public static void buttonWithEvent () {
+        JFrame f = new JFrame("Button Example");
+        final JTextField tf = new JTextField();
+        tf.setBounds(50,50,150,20);
+        JButton b = new JButton("Click Here");
+        b.setBounds(50, 100, 95 ,30);
+        b.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                tf.setText("Welcome to Hogwarts");
+            }
+        });
+        f.add(b);
+        f.add(tf);
+        f.setLayout(null);
+        f.setResizable(false);
+        f.setSize(400,400);
+        f.setVisible(true);
     }
 }
