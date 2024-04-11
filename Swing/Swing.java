@@ -4,8 +4,6 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-import javax.swing.JButton;
-
 /*
  * JFrames can be created by extending the Frame class Inheritance 
  * By craeting an object of the Frame class (Association)
@@ -16,7 +14,8 @@ public class Swing {
     public static void main(String[] args) {
 
         //swingExample1();
-        buttonWithEvent();
+        //buttonWithEvent();
+        buttonWithImage();
         
     }
 
@@ -57,5 +56,18 @@ public class Swing {
         f.setResizable(false);
         f.setSize(400,400);
         f.setVisible(true);
+    }
+
+    //Example of Adding an image to a buttomn
+    public static void buttonWithImage  () {
+        JFrame f = new JFrame("Example of a Button");
+        JButton b = new JButton( new ImageIcon("C:\\Users\\allan.branson\\Projects\\Java_Javat_Point\\Image Files\\OIP (1).jpg"));
+
+        b.setBounds(100,100,100,40);
+        f.add(b);
+        f.setSize(300,400);
+        f.setLayout(null);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
