@@ -37,4 +37,8 @@ public class AWTButton {
         f.setVisible(true);
         f.setName("Example One");
      }
+
+     public static void example2 () {
+        
+     }
 }
