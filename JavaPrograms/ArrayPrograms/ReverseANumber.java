@@ -3,6 +3,10 @@ package JavaPrograms.ArrayPrograms;
 public class ReverseANumber {
 
     public static void main(String[] args) {
+        example1();
+    }
+
+    public static void example1 () {
         int number = 987654;
         int reverse = 0;
         while (number != 0) {
@@ -12,5 +16,10 @@ public class ReverseANumber {
         }
 
         System.out.println("The reverse is: " + reverse);
+
+    }
+
+    public static void example2 () {
+        
     }
 }
