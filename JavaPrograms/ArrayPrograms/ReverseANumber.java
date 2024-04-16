@@ -1,11 +1,14 @@
 package JavaPrograms.ArrayPrograms;
 
+import java.util.Scanner;
+
 public class ReverseANumber {
 
     public static void main(String[] args) {
-        example1();
-        example2();
-        usingForLoops();
+       // example1();
+      //  example2();
+       // usingForLoops();
+        reverseWithReccursion(456789);
     }
 
     public static void example1 () {
@@ -47,6 +50,19 @@ public class ReverseANumber {
      }
 
      System.out.println(reverse);
+
+    }
+    //Using reccursion 
+    public static void reverseWithReccursion  (int number ) {
+
+        if (number < 10 ) {
+            System.out.println(number);
+            return;
+        }
+        else {
+            System.out.print(number % 10);
+            reverseWithReccursion(number /10);
+        }
 
     }
 }
