@@ -19,7 +19,7 @@ public class FindFrequencyOfArrayElements {
                     fr[j] = visited;
                 }
             }
-
+            //store the count in the frequency array if not already marked 
             if (fr[i] != visited)
             fr[i] = count;
         }
