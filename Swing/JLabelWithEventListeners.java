@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class JLabelWithEventListeners extends Frame implements ActionListener {
+public class JLabelWithEventListeners extends JFrame implements ActionListener {
    
     JTextField tf; JLabel l; JButton b;  
     
