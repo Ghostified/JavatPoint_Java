@@ -2,6 +2,10 @@ package JavaPrograms.ArrayPrograms;
 
 
 //Sort arrays from sl=mallest to ascending 
+/*
+ * paird of adjascent elements are compared , and elements swapped if not in order
+ * 
+ */
 
 public class BubbleSortAnArray {
 
