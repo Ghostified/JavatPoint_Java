@@ -17,8 +17,8 @@ import javax.swing.JOptionPane;
 public class JCheckBoxClass {
 
     public static void main(String[] args) {
-      //  JCheckBoxClassExample.checkBox1();
-      //CheckboxExampleTwo.checkboxWithItemListener();
+      JCheckBoxClassExample.checkBox1();
+      CheckboxExampleTwo.checkboxWithItemListener();
       new CheckboxExampleThree();
         
     }
