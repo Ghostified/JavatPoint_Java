@@ -7,7 +7,7 @@ import java.net.URLConnection;
 public class URLClass {
 
     public static void main(String[] args) {
-        //example1();
+        example1();
         URLConnectionClass();
         
     }
@@ -39,7 +39,7 @@ public class URLClass {
 
             int i;
             while ((i = stream.read()) != -1) {
-                System.out.println((char)i);
+                System.out.print((char)i);
             }
 
             System.out.println("Done!");
