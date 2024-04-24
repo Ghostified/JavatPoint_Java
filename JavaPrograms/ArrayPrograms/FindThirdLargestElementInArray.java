@@ -1,8 +1,14 @@
 package JavaPrograms.ArrayPrograms;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class FindThirdLargestElementInArray {
     public static void main(String[] args) {
+
+        int x [] = {91,34,56,77,88,99};
         example1();
+        System.out.println(sortArray(x, 6));
         
     }
 
@@ -26,6 +32,12 @@ public class FindThirdLargestElementInArray {
             break;
         }
         System.out.println(a[2]);
+    }
+
+     //find third largest number using sort method in Arrays class
+     public static int sortArray(int[] b, int total) {
+        Arrays.sort(b);
+        return b[total -3];
     }
 
 }
