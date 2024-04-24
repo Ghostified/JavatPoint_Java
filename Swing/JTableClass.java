@@ -13,7 +13,7 @@ import javax.swing.event.ListSelectionListener;
 public class JTableClass {
 
     public static void main(String[] args) {
-        //Jtables.tables();
+        Jtables.tables();
         TablesWithListListener.tablesWithListListener();
         
     }
