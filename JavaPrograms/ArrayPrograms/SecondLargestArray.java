@@ -1,10 +1,21 @@
 package JavaPrograms.ArrayPrograms;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import ControlStatements.BreakStatement.Break;
+
 public class SecondLargestArray {
 
     public static void main(String[] args) {
+        int  [] x = {1,2,3,4,5,6};
+        //Integer [] y = {89,77,90,66,55};
+        // example1();
+         //System.out.println("Second largest: " + example3(x, 5));
+        // System.out.println("Second largest: " + example5(y, 6));
         
-        example1();
+         System.out.println(example6(x));
     }
 
     public static void example1 () {
@@ -41,4 +52,41 @@ public class SecondLargestArray {
         }
         System.out.println(arr[1]);
     }
-}
+    //Using Arays.Sort () method
+
+    public static int example3(int [] a , int total){
+        Arrays.sort(a);
+        return a[total - 2];
+
+    }
+//using collections
+    public static  int example5(Integer [] a, int total ){
+
+        List<Integer> list = Arrays.asList(a);
+        Collections.sort(list);
+
+        int element = list.get(total - 2);
+        return element;
+    }
+
+    static int []   example6 (int [] a ) {
+        int temp;
+        for (int i =0; i < a.length; i++) {
+            for (int j = 0; j < a.length - i - 1; j++) {
+                if ( a[j] < a[j + 1]) {
+    
+                     temp = a[j];
+                     a[i] = a[j + 1];
+                     a[j + 1] = temp;
+                }
+            }
+        }
+        
+        System.out.println("Sorted Array: ");
+    for (int x = 0; x < a.length; x++){
+        System.out.print(a[x] + " ");
+    }
+        
+        return  a;
+    }
+ }
