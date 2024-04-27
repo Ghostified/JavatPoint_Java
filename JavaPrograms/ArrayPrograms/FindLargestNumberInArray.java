@@ -1,8 +1,20 @@
 package JavaPrograms.ArrayPrograms;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 public class FindLargestNumberInArray {
     public static void main(String[] args) {
         findLargestNumber();
+        example11();
+
+        //Using collections
+         Integer [] b = {3,4,5,6,7,8,9};
+         int size = b.length;
+        example12(b,size );
     }
 
     public static void findLargestNumber () {
@@ -37,4 +49,37 @@ public class FindLargestNumberInArray {
          System.out.println("Largest Number in the  Array is " + arr[0]);
 
     }
+
+    //Find the largest array using the Arrays.Sort Method
+
+    public static void example11 () {
+        int[]  a = {1,2,34,55,67,488,7};
+        int total = a.length;
+
+        Arrays.sort(a);
+
+        for (int  i = 0; i < a.length; i++ ) {
+            System.out.print(a[i] + " ");
+        }
+
+        System.out.println();
+        System.out.println("Largest Element: ");
+
+        System.out.println(a[total - 1]);
+        
+    }
+
+    //Find the largest element using Collections.
+
+    public static int  example12 ( Integer [] a, int total) {
+
+        total = a.length;
+
+        List<Integer> list =  Arrays.asList(a);
+        Collections.sort(list);
+        int largest = list.get(total -1);
+        return largest ;
+    }
+
 }
+ 
