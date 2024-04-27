@@ -1,8 +1,12 @@
 package JavaPrograms.ArrayPrograms;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class FindLargestNumberInArray {
     public static void main(String[] args) {
-        findLargestNumber();
+        //findLargestNumber();
+        example11();
     }
 
     public static void findLargestNumber () {
@@ -37,4 +41,24 @@ public class FindLargestNumberInArray {
          System.out.println("Largest Number in the  Array is " + arr[0]);
 
     }
+
+    //Find the largest array using the Arrays.Sort Method
+
+    public static void example11 () {
+        int[]  a = {1,2,34,55,67,488,7};
+        int total = a.length;
+
+        Arrays.sort(a);
+
+        for (int  i = 0; i < a.length; i++ ) {
+            System.out.print(a[i] + " ");
+        }
+
+        System.out.println();
+        System.out.println("Largest Element: ");
+
+        System.out.println(a[total - 1]);
+        
+    }
+
 }
