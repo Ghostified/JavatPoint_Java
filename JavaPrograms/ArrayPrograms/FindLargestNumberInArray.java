@@ -2,11 +2,19 @@ package JavaPrograms.ArrayPrograms;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class FindLargestNumberInArray {
     public static void main(String[] args) {
-        //findLargestNumber();
+        findLargestNumber();
         example11();
+
+        //Using collections
+         Integer [] b = {3,4,5,6,7,8,9};
+         int size = b.length;
+        example12(b,size );
     }
 
     public static void findLargestNumber () {
@@ -61,4 +69,17 @@ public class FindLargestNumberInArray {
         
     }
 
+    //Find the largest element using Collections.
+
+    public static int  example12 ( Integer [] a, int total) {
+
+        total = a.length;
+
+        List<Integer> list =  Arrays.asList(a);
+        Collections.sort(list);
+        int largest = list.get(total -1);
+        return largest ;
+    }
+
 }
+ 
