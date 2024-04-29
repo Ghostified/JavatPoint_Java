@@ -2,8 +2,6 @@ package JavaPrograms.ArrayPrograms;
 
 import java.util.*;
 
-import javax.sound.midi.Soundbank;
-
 public class FindSmallestNumberInArray {
 
     public static void main(String[] args) {
