@@ -12,23 +12,20 @@ package JavaPrograms.ArrayPrograms;
             int size = arr.length;
             int even ; 
             int odd;
-         for (int i = 0; i < arr.length; i++)  {
-            for (int j =0; j < size - 1; j++) {
-                if (arr[j] % 2 == 0) {
-                    even = arr[j];
-            
-                    System.out.print("\n Even: " + arr[j]);
-                
-                } else if (arr[j] % 2 != 0) {
-                    odd = arr [j];
-
-                    System.out.print(" \nOdd: " + arr[j] );
+        
+            System.out.println("Odd Elements");
+            for (int i =0; i < size ; i++) {
+                if (arr[i] % 2 != 0) {
+                    System.out.print(  arr[i] + " ");
                 }
             }
 
-
-        }
-    
+            System.out.println("\nEven Elements: ");
+            for (int j  = 0; j < size; j++) {
+                if (arr[j] % 2 == 0 ) {
+                    System.out.print( arr[j] + " ");
+                }
+            }
         }
     }
 
