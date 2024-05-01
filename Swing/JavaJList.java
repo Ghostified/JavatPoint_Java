@@ -11,7 +11,7 @@ import javax.swing.JList;
 
 public class JavaJList {
     public static void main(String[] args) {
-        //jlistExample1();
+        jlistExample1();
         jlistWithActionListener();
         
     }
