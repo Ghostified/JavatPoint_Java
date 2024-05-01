@@ -12,7 +12,7 @@ package JavaPrograms.ArrayPrograms;
             int size = arr.length;
           
         
-            System.out.println("Odd Elements");
+            System.out.println("Odd Elements:");
             for (int i =0; i < size ; i++) {
                 if (arr[i] % 2 != 0) {
                     System.out.print(  arr[i] + " ");
