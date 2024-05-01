@@ -10,8 +10,7 @@ package JavaPrograms.ArrayPrograms;
      public static void findEvenAndOdd() {
             int arr [] = {1,2,3,4,5,6};
             int size = arr.length;
-            int even ; 
-            int odd;
+          
         
             System.out.println("Odd Elements");
             for (int i =0; i < size ; i++) {
