@@ -1,1 +1,1 @@
-﻿#JavatPoint_Java learning Java
+﻿#JavatPoint_Java learning Java syntax
