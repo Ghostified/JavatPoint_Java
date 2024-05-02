@@ -9,12 +9,7 @@ import javax.swing.JOptionPane;
 /*
  * Used to provide =starndard dialog boxes
  */
-public class JavaJOptionPane{
-    public static void main(String[] args) {
-        //jOptionPaneExample1();
-        //jOptionPaneExample2();
-        //jOptionPaneExample3();
-        ShowConfirmDialog1.jOptionPaneExample4 ();    
+  
         
     }
 
