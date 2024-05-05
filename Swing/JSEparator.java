@@ -15,7 +15,7 @@ import javax.swing.JSeparator;
 public class JSEparator {
 
     public static void main(String[] args) {
-       // separatorExample();
+       separatorExample();
        example2();
     }
 
