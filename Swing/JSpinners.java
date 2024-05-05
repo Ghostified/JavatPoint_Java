@@ -14,7 +14,7 @@ import javax.swing.event.ChangeListener;
 public class JSpinners {
 
     public static void main(String[] args) {
-       // new SpinnerExample();
+       new SpinnerExample();
        new JSpinnerWithChangeListener();
         
     }
