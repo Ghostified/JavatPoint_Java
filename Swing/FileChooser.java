@@ -7,7 +7,8 @@ import javax.swing.JFileChooser;
  */
 public class FileChooser {
     public static void main(String[] args) {
-        new HelloWorld();
+        //new HelloWorld();
+        new HelloWorld2();
     }
 
 }
@@ -20,5 +21,17 @@ class HelloWorld {
         //Creating an object of the JFileChooser Class
         JFileChooser jf = new JFileChooser(); // default constructor JFileChooser is called
         jf.showSaveDialog(null);
+    }
+}
+
+// JFileChooser (File CurrentDirectory)
+// Constructs  a  JFilechooser involving the given file as the way
+//Example 
+
+class HelloWorld2 {
+    HelloWorld2() {
+        //Creating the object to the JFileChooser
+        JFileChooser jf = new JFileChooser("C:"); //paarametized constructor, the current directory is called
+        jf.showSaveDialog(null); //opening the saved dialog
     }
 }
