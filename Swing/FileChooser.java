@@ -1,7 +1,11 @@
 package Swing;
 
+import java.io.File;
+
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileSystemView;
+import javax.swing.filechooser.*;
+
 
 /*
  * The JFileChooser component is used to build GUI with lots of components 
@@ -13,7 +17,8 @@ public class FileChooser {
         //new HelloWorld3();
         //new Hello();
         //new Hello2();
-        new Hello3();
+        //new Hello3();
+        new Hello4 ();
     }
 
 }
@@ -89,3 +94,11 @@ class HelloWorld2 {
             jf.showSaveDialog(null); // opening the saved dialogue
         }
     }
+
+    //JfileChooser (File) filr constructor 
+class Hello4 {
+    Hello4 () {
+        JFileChooser jf = new JFileChooser( new File("C:/Users"));
+        jf.showOpenDialog(null);
+    }
+}
