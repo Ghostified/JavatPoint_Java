@@ -12,7 +12,8 @@ public class FileChooser {
         //new HelloWorld2();
         //new HelloWorld3();
         //new Hello();
-        new Hello2();
+        //new Hello2();
+        new Hello3();
     }
 
 }
@@ -76,3 +77,15 @@ class HelloWorld2 {
         jf.showSaveDialog(null);
     }
    }
+
+   /*
+    * JFileChooser(String directoryPath , FileSystemView)
+    */
+
+    class Hello3 {
+        Hello3 () {
+            // Creating a JFileChooser parametized constructor with : JFileChooser(String directoryPath , FileSystemView)
+            JFileChooser jf = new JFileChooser("C:/Users/allan.branson/Projects", FileSystemView.getFileSystemView());
+            jf.showSaveDialog(null); // opening the saved dialogue
+        }
+    }
