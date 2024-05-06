@@ -1,6 +1,7 @@
 package Swing;
 
 import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileSystemView;
 
 /*
  * The JFileChooser component is used to build GUI with lots of components 
@@ -8,7 +9,8 @@ import javax.swing.JFileChooser;
 public class FileChooser {
     public static void main(String[] args) {
         //new HelloWorld();
-        new HelloWorld2();
+        //new HelloWorld2();
+        new HelloWorld3();
     }
 
 }
@@ -35,3 +37,17 @@ class HelloWorld2 {
         jf.showSaveDialog(null); //opening the saved dialog
     }
 }
+
+/*
+ * JFileChooser (File currentDirectory , FileSystemViewfsv)
+ * Constructs a JFileChooser utilizing the given current catalog and FileSystemView
+ * Example
+ */
+
+ class HelloWorld3 {
+    HelloWorld3 () {
+        //Creating an obk=ject of the JFileChooser Class
+        JFileChooser jf = new JFileChooser("C:", FileSystemView.getFileSystemView()); //Parametized constructor
+        jf.showSaveDialog(null);
+    }
+ }
