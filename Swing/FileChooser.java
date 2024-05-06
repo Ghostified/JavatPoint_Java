@@ -11,7 +11,8 @@ public class FileChooser {
         //new HelloWorld();
         //new HelloWorld2();
         //new HelloWorld3();
-        new Hello();
+        //new Hello();
+        new Hello2();
     }
 
 }
@@ -63,3 +64,15 @@ class HelloWorld2 {
         jf.showSaveDialog(null);
     }
   }
+
+  /*
+   * JFileChoose (String currentDirectoryPath)
+   * Constructs a JFileChooser using the given way/path?
+   */
+
+   class Hello2{
+    Hello2 () {
+        JFileChooser jf = new  JFileChooser ("C:/Users/allan.branson/Projects");
+        jf.showSaveDialog(null);
+    }
+   }
