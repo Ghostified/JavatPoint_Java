@@ -18,7 +18,8 @@ public class FileChooser {
         //new Hello();
         //new Hello2();
         //new Hello3();
-        new Hello4 ();
+        //new Hello4 ();
+        //new Hello5();
     }
 
 }
@@ -100,5 +101,14 @@ class Hello4 {
     Hello4 () {
         JFileChooser jf = new JFileChooser( new File("C:/Users"));
         jf.showOpenDialog(null);
+    }
+}
+
+//JFileChooser File constructor with File System View
+
+class Hello5 {
+    Hello5() {
+        File f = new File ("C:/Users");
+        JFileChooser jf = new JFileChooser(f, FileSystemView.getFileSystemView());
     }
 }
