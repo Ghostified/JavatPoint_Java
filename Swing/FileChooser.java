@@ -10,7 +10,8 @@ public class FileChooser {
     public static void main(String[] args) {
         //new HelloWorld();
         //new HelloWorld2();
-        new HelloWorld3();
+        //new HelloWorld3();
+        new Hello();
     }
 
 }
@@ -51,3 +52,14 @@ class HelloWorld2 {
         jf.showSaveDialog(null);
     }
  }
+
+ /*
+  * JFileChooser constructor with the given file system view
+  */
+
+  class Hello {
+    Hello () {
+        JFileChooser jf = new JFileChooser(FileSystemView.getFileSystemView());
+        jf.showSaveDialog(null);
+    }
+  }
