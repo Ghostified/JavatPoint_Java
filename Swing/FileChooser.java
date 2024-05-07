@@ -17,14 +17,14 @@ import java.awt.event.*;
  */
 public class FileChooser {
     public static void main(String[] args) {
-        new HelloWorld();
-        new HelloWorld2();
-        new HelloWorld3();
-        new Hello();
-        new Hello2();
-        new Hello3();
-        new Hello4 ();
-        new Hello5();
+        // new HelloWorld();
+        // new HelloWorld2();
+        // new HelloWorld3();
+        // new Hello();
+        // new Hello2();
+        // new Hello3();
+        // new Hello4 ();
+        // new Hello5();
         new JFileChooserMethods();
     }
 
@@ -128,6 +128,9 @@ class JFileChooserMethods extends JFrame implements ActionListener {
 
     //DefaultConstructor
     JFileChooserMethods () {
+    }
+
+    public static void fileChooserMethods () {
         //Creating an object of the JFrame Class and giving it the name of Frame
         JFrame frame = new JFrame();
 
@@ -167,10 +170,10 @@ class JFileChooserMethods extends JFrame implements ActionListener {
         p.add(label);
         frame.add(p);
 
-        frame.show();
+        frame.setVisible(true);
     }
 
-    public void actionPerformedn(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {
         //If the client presses the save button , show the save dialog
         String com = e.getActionCommand();
 
@@ -216,5 +219,4 @@ class JFileChooserMethods extends JFrame implements ActionListener {
             label.setText("The user cancelled the operation");
         }
     }
-
 }
