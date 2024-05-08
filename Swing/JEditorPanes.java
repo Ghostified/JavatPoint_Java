@@ -14,7 +14,7 @@ public class JEditorPanes {
     JFrame myFrame = null;
 
     public static void main(String[] args) {
-        //(new JEditorPanes()).test();
+        (new JEditorPanes()).test();
         (new JEditorPanes()).example();
     }
 
