@@ -37,8 +37,20 @@ public class TitleBarIcon {
         f.setVisible(true);
     }
 
+    //Change the TitlebarIcon 
+    static void changeIcon () {
+        JFrame f = new JFrame();
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:/Users/allan.branson/Downloads/download.jpg");
+        f.setIconImage(icon);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setLayout(null);
+        f.setSize(300,300);
+        f.setVisible(true);
+    }
+
     public static void main(String[] args) {
         new TitleBarIcon();
         example11();
+        changeIcon();
     }
 }
