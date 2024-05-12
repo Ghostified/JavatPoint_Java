@@ -1,6 +1,8 @@
 package Swing.Programs;
 
+import java.awt.Color;
 import java.awt.Frame;
+import java.awt.Label;
 
 public class CalculatorInJava  extends Frame {
 
@@ -13,6 +15,68 @@ public class CalculatorInJava  extends Frame {
     String memoryButtonText [] = {"MC", "MR", "MS", "M+"};
     String specialButtonText [] = {"Backspc", "C", "CE"};
 
+    MyDigitButton digitButton [] = new MyDigitButton [digitButtonText.length];
+    MyOperatorButton operatorButton [] = new MyOperatorButton [operatorButtonText.length];
+    MyMemoryButton memoryButton [] = new MyMemoryButton [memoryButtonText.length];
+    MySpecialButton specialButton[] = new MySpecialButton [specialButtonText.length]; 
 
+    Label displayLabel = new Label("0", Label.RIGHT);
+    Label memLabel = new Label(" ", Label.RIGHT);
+
+    final int FRAME_WIDTH = 325, FRAME_HEIGHT = 325;
+    final int HEIGHT =30, WIDTH = 30, H_SPACE = 10, V_SPACE = 10; 
+    final int TOPX = 30, TOPY = 50;
+
+    CalculatorInJava (String frameText) {
+        //constructor
+
+        super(frameText);
+
+        int tempX = TOPX , y = TOPY;
+        displayLabel.setBounds(tempX, y, 240, HEIGHT);
+        displayLabel.setBackground(Color.BLUE);
+        displayLabel.setForeground(Color.WHITE);
+        add(displayLabel);
+
+        memLabel.setBounds(TOPX, TOPY + HEIGHT + V_SPACE, WIDTH, HEIGHT);
+        add(memLabel);
+
+        //set Co -ordinates for Memory Buttons
+        tempX = TOPX;
+        y = TOPY + 2 * (HEIGHT + V_SPACE);
+        for (int i = 0; i < memoryButton.length; i++) {
+            memoryButton[i] = new MyMemoryButton(tempX, y, WIDTH, HEIGHT,memoryButtonText[i], this);
+            memoryButton[i].setForeground(Color.RED);
+            y+= HEIGHT + V_SPACE;
+        }
+
+
+        //Set cordinates for special Buttons
+        tempX = TOPX + 1*(WIDTH + H_SPACE);
+        y = TOPY + 1 * (HEIGHT + V_SPACE);
+        for (int i = 0; i < specialButton.length; i++) {
+            specialButton[i] = new MySpecialButton(tempX, y, WIDTH* 2, HEIGHT, specialButtonText[i], this);
+            specialButton[i]. setBackground(Color.RED);
+            tempX = tempX + 2*WIDTH + H_SPACE;
+        }
+
+
+        //set Cordinates for Digit Buttons
+        int digitX = TOPX + WIDTH + H_SPACE;
+        int digitY = TOPY + 2 *(HEIGHT + V_SPACE);
+        tempX = digitX;
+        y = digitY;
+        for (int i = 0; i < digitButton.length; i++) {
+            digitButton[i] = new MyDigitButton(tempX, y, WIDTH, HEIGHT, digitButtonText[i], this);
+            digitButton[i].setForeground(Color.BLUE);
+            tempX += WIDTH + H_SPACE;
+            if ((i + 1) % 3 == 0){
+                tempX = digitX; 
+                y += HEIGHT + V_SPACE;
+            }
+        }
+
+        //set cordinates for Operator Buttons
+    }
 
 }
