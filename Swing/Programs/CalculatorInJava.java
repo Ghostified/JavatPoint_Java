@@ -62,19 +62,7 @@ public class CalculatorInJava  extends Frame {
 
 
         //set Cordinates for Digit Buttons
-        int digitX = TOPX + WIDTH + H_SPACE;
-        int digitY = TOPY + 2 *(HEIGHT + V_SPACE);
-        tempX = digitX;
-        y = digitY;
-        for (int i = 0; i < digitButton.length; i++) {
-            digitButton[i] = new MyDigitButton(tempX, y, WIDTH, HEIGHT, digitButtonText[i], this);
-            digitButton[i].setForeground(Color.BLUE);
-            tempX += WIDTH + H_SPACE;
-            if ((i + 1) % 3 == 0){
-                tempX = digitX; 
-                y += HEIGHT + V_SPACE;
-            }
-        }
+
 
         //set cordinates for Operator Buttons
     }
