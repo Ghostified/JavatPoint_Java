@@ -68,32 +68,59 @@ public class PrimeNumberAlgorithms {
     static void sievePrimes (int n) 
     {
 
-        boolean [] primeArray  = new boolean [n + 1]; 
+    //     boolean [] primeArray  = new boolean [n + 1]; 
 
-        for (int i = 2; i <= n; i++)
-        {
-            primeArray[i] = true;
-        }
+    //     for (int i = 2; i <= n; i++)
+    //     {
+    //         primeArray[i] = true;
+    //     }
 
-    for (int i =2; i * i <= n ; i++) 
-    {
-        if (primeArray[i] ){
-            for (int j =i * i; j <=n; j += i){
-                primeArray[j] = false;
+    // for (int i =2; i * i <= n ; i++) 
+    // {
+    //     if (primeArray[i] ){
+    //         for (int j =i * i; j <=n; j += i){
+    //             primeArray[j] = false;
 
+    //         }
+    //     }
+    // }
+
+    // System.out.println("Prime numbers up to : " + n + " are: ");
+
+    // for (int i =2; i <=n ; i++){
+    //     if (primeArray[i]) {
+    //         System.out.println(i + " ");
+    //     }
+    // }
+    // System.out.println();
+
+    //Step 1 : initialize a boolean arrays
+    boolean [] isPrime = new boolean [n + 1];
+    for (int i =2; i <= n; i++) {
+        isPrime[i] = true;
+    }
+
+    //step two mark the non- prime numbers
+    for (int p =2; p * p <= n; p++) {
+        //if isPrme [p] is still true, then its prime
+        if (isPrime[p]){
+            //Mark all themultiples of p as false
+            for (int multiples = p * p; multiples <= n; multiples = multiples + p){
+                isPrime[multiples] = false;
             }
         }
     }
 
-    System.out.println("Prime numbers up to : " + n + " are: ");
-
-    for (int i =2; i <=n ; i++){
-        if (primeArray[i]) {
+    //collect and print all the primes
+    System.out.println("The prime numbers upto :" + n  + " are: ");
+    for (int i =2; i <= n; i++){
+        if (isPrime[i]){
             System.out.println(i + " ");
         }
     }
-    System.out.println();
 
+    //new Line 
+    System.out.println();
 }
 
 
