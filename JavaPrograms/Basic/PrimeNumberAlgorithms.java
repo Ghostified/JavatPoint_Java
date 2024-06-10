@@ -1,5 +1,7 @@
 package JavaPrograms.Basic;
 
+import java.util.Scanner;
+
 //Find all the prime numbers between  1 to n
 
 
@@ -7,7 +9,7 @@ public class PrimeNumberAlgorithms {
 
     public static void main(String[] args) {
 
-        int z = 1000000;
+        int z = 11000000;
     
 
         TimeTracker.trackTime(() -> {
@@ -18,8 +20,14 @@ public class PrimeNumberAlgorithms {
             System.out.println();
     
         });
-       
 
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the value of n: ");
+        int n = scan.nextInt();
+        scan.close();
+        TimeTracker.trackTime( () -> {
+            sievePrimes(n);
+        });
         
     }
 
@@ -48,17 +56,58 @@ public class PrimeNumberAlgorithms {
 
     //Sieve of Eratosthenes
 
+    //creata  a boolean array of size index n;
+    //loop through n for n where i =2
+    //mark if i is true = marked
+    //if (number is unmarked):
+    //for j = i * 2 to n
+    //mark all its multiples
+    //Increment i throuh n where i is umarked
+    //print all umarrked 
+
+    static void sievePrimes (int n) 
+    {
+
+        boolean [] primeArray  = new boolean [n + 1]; 
+
+        for (int i = 2; i <= n; i++)
+        {
+            primeArray[i] = true;
+        }
+
+    for (int i =2; i * i <= n ; i++) 
+    {
+        if (primeArray[i] ){
+            for (int j =i * i; j <=n; j += i){
+                primeArray[j] = false;
+
+            }
+        }
+    }
+
+    System.out.println("Prime numbers up to : " + n + " are: ");
+
+    for (int i =2; i <=n ; i++){
+        if (primeArray[i]) {
+            System.out.println(i + " ");
+        }
+    }
+    System.out.println();
+
 }
+
+
  class TimeTracker {
 
     static void trackTime (Runnable method) {
         long start = System.nanoTime();
         method.run();
         Long end = System.nanoTime();
-        Long period = (end - start) / 1000000000;
-        System.out.println("The time taken is " + period + " seconds.");
+        Long period = (end - start) / 1000000;
+        System.out.println("The time taken is " + period + " milliseconds.");
         
     }
  }
+}
 
 
