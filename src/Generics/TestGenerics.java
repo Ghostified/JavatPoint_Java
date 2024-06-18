@@ -20,6 +20,9 @@ public class TestGenerics {
 
         TestGenerics2 obj2 = new TestGenerics2();
         obj2.testGenerics2();
+
+        TestGenerics3 obj3 = new TestGenerics3 ();
+        obj3.testGenerics3 ();
     }
 }
 //show casing that type casting is not required
@@ -60,5 +63,23 @@ class TestGenerics2 {
         Map.Entry e = itr.next(); //No need to type cast 
         System.out.println(e.getKey() + " " + e.getValue());
        }
+    }
+}
+
+//Using a generic class to stote the specific type of data in a class
+
+class MyGen <T> {
+    T obj;
+    void add(T obj) {this.obj = obj;}
+    T get() {return obj;}
+}
+
+class TestGenerics3 {
+    public static void testGenerics3 () {
+        MyGen <Integer> d = new MyGen<Integer> ();
+        d.add(5);
+        d.add(20);
+        //m.add("Branson"); //TRhis will return a compile time error as the generic class stores data types of integers
+        System.out.println(d.get());
     }
 }
