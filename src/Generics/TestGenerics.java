@@ -83,3 +83,4 @@ class TestGenerics3 {
         System.out.println(d.get());
     }
 }
+
